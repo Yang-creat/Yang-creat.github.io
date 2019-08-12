@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hexo+GitHub搭建个人博客总结-2 | Blog of Mr.Yang</title>
+  <title>思维模型 | Blog of Mr.Yang</title>
   <meta name="keywords" content>
-  <meta name="description" content="Hexo+GitHub搭建个人博客总结-2 | Blog of Mr.Yang">
+  <meta name="description" content="思维模型 | Blog of Mr.Yang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Mr.Yang">
 <meta property="og:type" content="website">
@@ -219,9 +219,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Hexo-GitHub搭建个人博客总结-2" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-思维模型" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hexo+GitHub搭建个人博客总结-2</h1>
+        <h1 class="article-title">思维模型</h1>
     
     <div class="article-meta">
         
@@ -229,9 +229,7 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="工具">工具</a>/
-            
-                <a href="javascript:" data-rel="Hexo">Hexo</a>
+                <a href="javascript:" data-rel="思维模型">思维模型</a>
             
         </span>
         
@@ -239,7 +237,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-09 18:06:34'>2019-08-09 17:02</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-12 11:48:23'>2019-08-12 10:58</time>
         
     </div>
     <div class="article-meta">
@@ -250,7 +248,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步：主题个性化设置"><span class="toc-text">第二步：主题个性化设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-网页信息设置"><span class="toc-text">一. 网页信息设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-左侧边栏设置"><span class="toc-text">二. 左侧边栏设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-列表设置"><span class="toc-text">三. 列表设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-内容页设置"><span class="toc-text">四.内容页设置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#所遇问题"><span class="toc-text">所遇问题</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#“原因”思维模型"><span class="toc-text">“原因”思维模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#“API”思维模型"><span class="toc-text">“API”思维模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#“记忆”思维模型"><span class="toc-text">“记忆”思维模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下一节预告，以上思维模型在学习之中的应用，敬请期待！"><span class="toc-text">下一节预告，以上思维模型在学习之中的应用，敬请期待！</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -265,55 +263,30 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第二步：主题个性化设置"><a href="#第二步：主题个性化设置" class="headerlink" title="第二步：主题个性化设置"></a>第二步：主题个性化设置</h2><h3 id="一-网页信息设置"><a href="#一-网页信息设置" class="headerlink" title="一. 网页信息设置"></a>一. 网页信息设置</h3><ol>
-<li>网页名称<br>打开站点配置文件<strong>_config</strong>，修改<strong>Site-title</strong>即可。</li>
-<li>post网址名称<br>打开站点配置文件<strong>_config</strong>，设置URL-permalink格式：permalink格式: :year/:month/:day/:category/:title/（其中每项可删减），随后更改scaffolds-post，在其中添加permalink: （此文件为post模板，之后新建的帖子都含有permalink），当通过<strong>hexo n post ‘filename’</strong>新建一个post后，不填写即默认为以上格式。</li>
-</ol>
-<h3 id="二-左侧边栏设置"><a href="#二-左侧边栏设置" class="headerlink" title="二. 左侧边栏设置"></a>二. 左侧边栏设置</h3><ol>
-<li>主页头像<br>打开主题配置文件<strong>theme-_config</strong>文件，修改<strong>avatar: &amp; favicon</strong>所指的文件即可，文件目录为<strong>source-img</strong>，将自己的图片添加进改成相应的名称即可。</li>
-<li>主页文章<br>打开<strong>layout-indexs</strong>编辑修改即可。</li>
-<li>联系方式图标<br>打开<strong>theme-_config</strong>文件，修改*<em>link: *</em>即可。</li>
-<li>左侧目录<br>打开站点配置文件<strong>_config</strong>，在<strong>category &amp; Tag- category_map:</strong>中添加分类的标签名称，若有多级，则按<strong>工具&gt;hexo</strong>格式进行添加，随后在每篇新建的post的<strong>categories</strong>中设置分类即可，如：<br>categories:-工具 -hexo。</li>
-<li><strong>关于</strong>信息<br>打开<strong>source-about-index</strong>进行修改即可，如若无about文件夹，则可以通过<strong>hexo n post “about”</strong>进行建立。</li>
-</ol>
-<h3 id="三-列表设置"><a href="#三-列表设置" class="headerlink" title="三. 列表设置"></a>三. 列表设置</h3><ol>
-<li>搜索功能<br>打开<strong>theme-_config</strong>文件，开启<strong>searchAll</strong>即可。</li>
-<li>列表背景<br>打开<strong>theme-_config</strong>文件，开启<strong>article_bg_img:</strong>，更换图片网址即可。</li>
-</ol>
-<h3 id="四-内容页设置"><a href="#四-内容页设置" class="headerlink" title="四.内容页设置"></a>四.内容页设置</h3><ol>
-<li>字数统计<br>注意：需要安装插件。</li>
-<li>文末声明<br><strong>article_text:</strong>自行添加。</li>
-<li>版权信息<br><strong>copyright:</strong>可关闭开启，无法修改（代码中）。</li>
-<li>底部信息<br><strong>bottom_text:</strong>可修改/关闭。</li>
-</ol>
-<hr>
-<h2 id="所遇问题"><a href="#所遇问题" class="headerlink" title="所遇问题"></a><center>所遇问题</center></h2><ol>
-<li>为什么加了个空格就显示不出生成密匙图片</li>
-<li>true写成ture错误</li>
-<li>注意字数统计缺少插件不能开启，否则无法启动</li>
-<li>如何更改网页地址为<a href="http://www.shuoit.net" target="_blank" rel="noopener">www.shuoit.net</a></li>
-<li>menu菜单下有几个功能页，这些功能页如何实现的<blockquote>
-<p>通过特定的修改config中相对应的名称/以及建立相对应的文件夹即可。内容在哪里修改：通过修改theme-config-menu项冒号后面的名称，即可指向Blog文件下source中对应名称的文件（可通过hexo new page 文件名 新建该类型文件？？还可以新建其他类型的文件吗，对应的功能是什么，注意：只有通过改方法建立的文件夹才能导入到对应标签的网页中），因此通过修改此文件可以修改各标签所对应的内容。？？文件内容格式如何优化</p>
+        <h2 id="“原因”思维模型"><a href="#“原因”思维模型" class="headerlink" title="“原因”思维模型"></a>“原因”思维模型</h2><blockquote>
+<p>此思维模型概括了两种常见的<strong>思索原因</strong>的模型</p>
 </blockquote>
-</li>
-<li>每次修改配置内容后需要重新hexo s启动</li>
-<li>public文件是怎么出来的：在将本地配置上传至远程服务器时，各文件保存在public中</li>
-<li>网站上所有格式的修改应当在theme-config中完成</li>
-<li>deploy_git中文件应该是push到git中的文件</li>
-<li>JSON格式是什么：基于JS编程的一个子集，是什么鬼东西</li>
-<li>permalink：为永久链接，意为指向一个特定的网络日志的标识符</li>
-<li>scaffolds，为新建页面的模板，新建post/page/draft都是根据此模板完成的，可在其中加入一些默认值</li>
-<li>category &amp;Tag设置的是什么</li>
-<li>lang：en  设置的是什么</li>
-<li>url设置的域名有什么用</li>
-<li>hexo提交到github后会自动将about文件转换为html文件</li>
-<li>public文件夹中存储着当hexo上传文件至git后，产生的source中的各文件的网址</li>
-<li>theme-config中可设置menu分类的格式，返回到各路径中的文件</li>
-<li>每个文档可设置一些默认属性，如名称/日期/标签/链接/分类</li>
-<li>可以让menu中分类标签指向各种类吗：通过建立对应文件，设值type即可</li>
-<li>将图片放在theme-source-img下即可</li>
-</ol>
-
+<ul>
+<li>其一，<strong>状态原因</strong>思维模型：当遇到各种状态问题时，比如说‘心头压力大，呼吸沉重’的原因是什么，可直接考虑自身属性的因素（如实力、状态）、周围环境的因素。</li>
+<li>其二，<strong>行为原因</strong>思维模型：当思考某件事或某个行为原因时，比如说”为什么要思索’心头压力大，呼吸沉重’的原因是什么“，此‘要’字尤为重要，表现出目的，因此直接考虑该行为的目的和结果即可，即：目的和结果是可以解决当前不舒服的状态，从而使得解决问题更高效。<br><center><img src="https://github.com/Yang-creat/Images/blob/master/%E6%80%9D%E7%B6%AD%E6%A8%A1%E5%9E%8B/why%E6%A8%A1%E5%9E%8B.png?raw=true" alt="原因思维模型"></center></li>
+</ul>
+<h2 id="“API”思维模型"><a href="#“API”思维模型" class="headerlink" title="“API”思维模型"></a>“API”思维模型</h2><blockquote>
+<p>将当我们遇到问题时，解决问题的步骤抽象为一种模型，即<strong>API思维模型</strong>，此处<strong>API</strong>引用了计算机术语‘接口’，即输入一个参数，返回一个参数，其中过程是一定的（由API函数决定），我们遇到一个参数（问题）时，开始调用一个API的过程，即成为API思维模型。</p>
+</blockquote>
+<ul>
+<li>此模型，即<strong>遇到问题时，直接调用已有模型的一种思维方式</strong>。似乎有点抽象，有点像套中套，俄罗斯套娃，举个栗子，比如，当我们需要思考原因时，直接调用上述的<em>原因思维模型</em>，即<strong>API思维模型</strong><br><center><img src="https://github.com/Yang-creat/Images/blob/master/%E6%80%9D%E7%B6%AD%E6%A8%A1%E5%9E%8B/why%E6%A8%A1%E5%9E%8B.png?raw=true" alt="API思维模型"></center></li>
+<li>API思维模型非常重要，它的核心思想是将任何解决问题的方法抽象为API模型，因此<strong>大大地提高解决问题的效率</strong>（直接调用即可），故所需做的就是构建各种思维模型，如原因思维模型。<font color="red"><strong>其实各种知识都是API思维模型，我们所做的就是将其构建成模型并且熟练地使用罢了。</strong></font></li>
+</ul>
+<h2 id="“记忆”思维模型"><a href="#“记忆”思维模型" class="headerlink" title="“记忆”思维模型"></a>“记忆”思维模型</h2><blockquote>
+<p>生活、学习各个方面都离不开记忆，因此有一种好的记忆方法尤为重要，此模型提高了一种行之有效的记忆模型。</p>
+</blockquote>
+<ul>
+<li>当遇到需要记忆的事物之时，比如上述的两种思维模型，必须将其形象化成为一个例子并熟练使用，这样在下次遇到后，举一反三，从而掌握模型。<br><center><img src="https://github.com/Yang-creat/Images/blob/master/%E6%80%9D%E7%B6%AD%E6%A8%A1%E5%9E%8B/%E8%AE%B0%E5%BF%86%E6%A8%A1%E5%9E%8B.png?raw=true" alt="记忆模型"></center></li>
+</ul>
+<blockquote>
+<p>以上各种思维模型中，并非简单的独立或者从属关系，而是互相嵌套，有些复杂，需要重复理解。</p>
+</blockquote>
+<h3 id="下一节预告，以上思维模型在学习之中的应用，敬请期待！"><a href="#下一节预告，以上思维模型在学习之中的应用，敬请期待！" class="headerlink" title="下一节预告，以上思维模型在学习之中的应用，敬请期待！"></a>下一节预告，以上思维模型在学习之中的应用，敬请期待！</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 本文由Mr.Yang所有，转载请注明 </span>
     </div>

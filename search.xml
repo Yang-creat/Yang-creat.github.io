@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>思维模型</title>
+      <link href="/2019/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/"/>
+      <url>/2019/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="“原因”思维模型"><a href="#“原因”思维模型" class="headerlink" title="“原因”思维模型"></a>“原因”思维模型</h2><blockquote><p>此思维模型概括了两种常见的<strong>思索原因</strong>的模型</p></blockquote><ul><li>其一，<strong>状态原因</strong>思维模型：当遇到各种状态问题时，比如说‘心头压力大，呼吸沉重’的原因是什么，可直接考虑自身属性的因素（如实力、状态）、周围环境的因素。</li><li>其二，<strong>行为原因</strong>思维模型：当思考某件事或某个行为原因时，比如说”为什么要思索’心头压力大，呼吸沉重’的原因是什么“，此‘要’字尤为重要，表现出目的，因此直接考虑该行为的目的和结果即可，即：目的和结果是可以解决当前不舒服的状态，从而使得解决问题更高效。<br><center><img src="https://github.com/Yang-creat/Images/blob/master/%E6%80%9D%E7%B6%AD%E6%A8%A1%E5%9E%8B/why%E6%A8%A1%E5%9E%8B.png?raw=true" alt="原因思维模型"></center></li></ul><h2 id="“API”思维模型"><a href="#“API”思维模型" class="headerlink" title="“API”思维模型"></a>“API”思维模型</h2><blockquote><p>将当我们遇到问题时，解决问题的步骤抽象为一种模型，即<strong>API思维模型</strong>，此处<strong>API</strong>引用了计算机术语‘接口’，即输入一个参数，返回一个参数，其中过程是一定的（由API函数决定），我们遇到一个参数（问题）时，开始调用一个API的过程，即成为API思维模型。</p></blockquote><ul><li>此模型，即<strong>遇到问题时，直接调用已有模型的一种思维方式</strong>。似乎有点抽象，有点像套中套，俄罗斯套娃，举个栗子，比如，当我们需要思考原因时，直接调用上述的<em>原因思维模型</em>，即<strong>API思维模型</strong><br><center><img src="https://github.com/Yang-creat/Images/blob/master/%E6%80%9D%E7%B6%AD%E6%A8%A1%E5%9E%8B/why%E6%A8%A1%E5%9E%8B.png?raw=true" alt="API思维模型"></center></li><li>API思维模型非常重要，它的核心思想是将任何解决问题的方法抽象为API模型，因此<strong>大大地提高解决问题的效率</strong>（直接调用即可），故所需做的就是构建各种思维模型，如原因思维模型。<font color="red"><strong>其实各种知识都是API思维模型，我们所做的就是将其构建成模型并且熟练地使用罢了。</strong></font></li></ul><h2 id="“记忆”思维模型"><a href="#“记忆”思维模型" class="headerlink" title="“记忆”思维模型"></a>“记忆”思维模型</h2><blockquote><p>生活、学习各个方面都离不开记忆，因此有一种好的记忆方法尤为重要，此模型提高了一种行之有效的记忆模型。</p></blockquote><ul><li>当遇到需要记忆的事物之时，比如上述的两种思维模型，必须将其形象化成为一个例子并熟练使用，这样在下次遇到后，举一反三，从而掌握模型。<br><center><img src="https://github.com/Yang-creat/Images/blob/master/%E6%80%9D%E7%B6%AD%E6%A8%A1%E5%9E%8B/%E8%AE%B0%E5%BF%86%E6%A8%A1%E5%9E%8B.png?raw=true" alt="记忆模型"></center></li></ul><blockquote><p>以上各种思维模型中，并非简单的独立或者从属关系，而是互相嵌套，有些复杂，需要重复理解。</p></blockquote><h3 id="下一节预告，以上思维模型在学习之中的应用，敬请期待！"><a href="#下一节预告，以上思维模型在学习之中的应用，敬请期待！" class="headerlink" title="下一节预告，以上思维模型在学习之中的应用，敬请期待！"></a>下一节预告，以上思维模型在学习之中的应用，敬请期待！</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 思维模型 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo+GitHub搭建个人博客总结-2</title>
       <link href="/2019/%E5%B7%A5%E5%85%B7/Hexo/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93-2/"/>
       <url>/2019/%E5%B7%A5%E5%85%B7/Hexo/Hexo-GitHub%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93-2/</url>
