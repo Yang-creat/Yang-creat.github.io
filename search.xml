@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>类和对象以及非成员函数的理解</title>
+      <link href="/2019/CPP%E5%AD%A6%E4%B9%A0/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E4%BB%A5%E5%8F%8A%E9%9D%9E%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+      <url>/2019/CPP%E5%AD%A6%E4%B9%A0/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E4%BB%A5%E5%8F%8A%E9%9D%9E%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>C++最大的不同于C语言的特点就是:面向对象编程(OOP).而在面向对象编程中,新的概念类和对象等比较抽象,难以理解,以下是我对其的一些理解和总结.</p></blockquote><ol><li><p>类</p><ul><li><strong>什么是类?</strong>在我看来,类是一个集合的抽象,比如苹果/梨子/西瓜可以抽象为一个类,即水果.</li><li><strong>类有什么特点?</strong>类中抽象了这个集合的属性(即数据),行为(即方法/函数),比如对于一个水果类,可以抽象出:从属性看:<strong>size/shape/color</strong>等;从行为看(水果类可以干什么,有什么行为,外界对它的改变,称之为即方法):如<strong>cut.</strong></li></ul></li><li><p>对象<br><br>在上述理解了类以及它的特点之后,那么对象就很容易理解了.</p><ul><li><strong>什么是对象?</strong>对象是类的一个实例化,比如将水果类进行实例化,通过类定义一个对象<strong>Fruit fruit(_size, _shape, _color);</strong>通过构造函数赋予该对象具体的属性值,将其特殊化,有了这些具体属性值的对象就是一个具体的对象,我们可以知道它到底是苹果/梨子还是西瓜了.</li><li><strong>对象有什么特点?</strong>由于在类中的所有方法对于对象是通用的(因为抽象于对象),故对象可以使用类的方法.而且对象的属性只有通过自己类的方法才能访问,外界是不能访问的.</li></ul></li><li><p>非成员函数<br><br>在谈什么是非成员函数之前,明白什么是成员函数,顾名思义,作为成员的函数,类成员的函数.</p><ul><li>因此,不在类中定义的函数就是非成员函数,但是在同一个名字空间中的非成员函数一般与类的对象是有关系的,一般是以类的对象作为参数,对其进行一定的操作.</li><li>特别注意一下,友元函数也是一种非成员函数,作为一种特殊的非成员函数.可以有成员函数的权限,访问私有成员变量.</li></ul></li><li><p>友元函数<br><br>对友元函数进行展开一下.</p><ul><li><strong>什么是友元函数?</strong>友元函数是以friend声明的,其声明在类中,一般在public中.作为一种特殊的非成员函数.可以有成员函数的权限,访问私有成员变量.</li><li><strong>友元函数有什么作用?</strong>多用于<strong>运算符的重载,尤其是需要改变类对象和另一个数据的使用数据的运算符重载.</strong>比如cin&lt;&lt;fruit(若使用成员函数重载运算符,应当是fruit&lt;&lt;cin).</li></ul></li><li><p>运算符重载<br><br>运算符重载有两种方式,成员函数及非成员友元函数.</p><ul><li>成员函数重载:returnType <strong>operator</strong> +-<em>/(otherType){};重载后的关系为stu +-</em>/ x</li><li>非成员函数重载:returnType <strong>operator</strong> =-<em>/(otherType, stu){};重载后的顺序为括号里的顺序,因此可以随意更改顺序.比如*</em>cin &lt;&lt; Data** :就是一个重载&lt;&lt;运算符的例子.</li><li>运算符重载后是有功能的,其功能一般保持原来的规则,但是使用对象会发生变化.</li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> CPP学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>C++名字空间的理解</title>
+      <link href="/2019/CPP%E5%AD%A6%E4%B9%A0/C-%E5%90%8D%E5%AD%97%E7%A9%BA%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+      <url>/2019/CPP%E5%AD%A6%E4%B9%A0/C-%E5%90%8D%E5%AD%97%E7%A9%BA%E9%97%B4%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>学习了C++ 后,对于一个新的概念:名字空间(namespace),理解还是比较模糊,遂经过一番思考,借助查询的资料,对其有了一定的理解,总结如下:</p></blockquote><ol><li><p>什么是名字空间</p><ul><li>在C++中存在作用域,一般有文件/函数|类/复合语句的作用域,呈现等级升高关系和依次包含关系.</li><li>所谓<strong>等级升高关系</strong>,即函数(类)中的定义的变量可以覆盖文件中定义的变量,同理,复合语句可覆盖以上两者定义的变量. </li><li>而所谓<strong>依次包含关系</strong>,指若是没有覆盖定义的变量,那么上一级定义的变量将会在下一级中起作用. 拿类来说, 正是因为每个类有不同的作用域,因此,给类的成员函数定义时,需要在函数名前面加上类的名字以及::域解析作用符,表明该函数是属于该类中的. 同时,另一个类也可以定义同名的函数,通过这种划分的作用域即可区分不同的函数.</li></ul></li></ol><blockquote><p>而我们现在需要将属于同一功能的类和函数等划分到同一个作用域下,比如filesystem,该名字空间下包含着与文件处理相关的各种类和非成员函数.但为了避免复杂的命名,我们使用一些简单的命名,如path/space()等,这些简单的命名可能会与其他具有不同功能但可能会出现相同的类/函数名字造成冲突,我们使用了名字空间,以此来划分功能区.</p></blockquote><ol start="2"><li>如何使用名字空间</li></ol><blockquote><p>调用所有该名字空间内的类/函数时需要加上<strong>名字空间和域解析作用符</strong>,比如std::filesystem::path p {“filepath”};其中path为std名字空间下filesystem名字空间下的path类, p为path定义的一个对象,通过列表初始化进行赋初值.</p></blockquote><p><strong>注意:名字空间可以嵌套使用,一个名字空间中可能会有另一个名字空间</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CPP学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>更改键盘键位</title>
       <link href="/2019/%E8%AE%A4%E8%AF%86%E7%94%B5%E8%84%91/%E6%9B%B4%E6%94%B9%E9%94%AE%E7%9B%98%E9%94%AE%E4%BD%8D/"/>
       <url>/2019/%E8%AE%A4%E8%AF%86%E7%94%B5%E8%84%91/%E6%9B%B4%E6%94%B9%E9%94%AE%E7%9B%98%E9%94%AE%E4%BD%8D/</url>
