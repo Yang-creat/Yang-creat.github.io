@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>类和对象以及非成员函数的理解 | Blog of Mr.Yang</title>
+  <title>函数的使用 | Blog of Mr.Yang</title>
   <meta name="keywords" content>
-  <meta name="description" content="类和对象以及非成员函数的理解 | Blog of Mr.Yang">
+  <meta name="description" content="函数的使用 | Blog of Mr.Yang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="C++最大的不同于C语言的特点就是:面向对象编程(OOP).而在面向对象编程中,新的概念类和对象等比较抽象,难以理解,以下是我对其的一些理解和总结.   类  什么是类?在我看来,类是一个集合的抽象,比如苹果/梨子/西瓜可以抽象为一个类,即水果. 类有什么特点?类中抽象了这个集合的属性(即数据),行为(即方法/函数),比如对于一个水果类,可以抽象出:从属性看:size/shape/color等;">
 <meta property="og:type" content="article">
@@ -299,9 +299,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-类和对象以及非成员函数的理解" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-函数的使用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">类和对象以及非成员函数的理解</h1>
+        <h1 class="article-title">函数的使用</h1>
     
     <div class="article-meta">
         
@@ -317,7 +317,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-08-20 14:54:44'>2019-08-20 11:59</time>
+        创建时间:<time class="date" title='更新时间: 2019-08-20 15:50:50'>2019-08-20 15:20</time>
         
     </div>
     <div class="article-meta">
@@ -328,7 +328,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-函数命名"><span class="toc-text">一.函数命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-函数参数"><span class="toc-text">二.函数参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-函数返回值"><span class="toc-text">三.函数返回值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-函数参数和返回值类型"><span class="toc-text">四.函数参数和返回值类型</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -343,39 +343,47 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>C++最大的不同于C语言的特点就是:面向对象编程(OOP).而在面向对象编程中,新的概念类和对象等比较抽象,难以理解,以下是我对其的一些理解和总结.</p>
+        <h2 id="一-函数命名"><a href="#一-函数命名" class="headerlink" title="一.函数命名"></a>一.函数命名</h2><blockquote>
+<p>函数名称作为标识作用,最好通过名字就能知道函数的功能,有一定的命名规则</p>
 </blockquote>
 <ol>
-<li><p>类</p>
+<li><strong>设置值的函数</strong>:setFunction(),常用于改变类私有变量的值的函数命名.</li>
+<li><strong>获得值的函数</strong>:getFunction(),常用于获得私有变量的值的函数命名.</li>
+</ol>
+<p>补充:关于命名大小写的问题,总结如下:</p>
 <ul>
-<li><strong>什么是类?</strong>在我看来,类是一个集合的抽象,比如苹果/梨子/西瓜可以抽象为一个类,即水果.</li>
-<li><strong>类有什么特点?</strong>类中抽象了这个集合的属性(即数据),行为(即方法/函数),比如对于一个水果类,可以抽象出:从属性看:<strong>size/shape/color</strong>等;从行为看(水果类可以干什么,有什么行为,外界对它的改变,称之为即方法):如<strong>cut.</strong></li>
+<li>全大写:常量名,用_分割单词;</li>
+<li>全小写:变量名,函数名,用_分割单词;</li>
+<li>大小混合:即用单词首字母大写分割单词,用于变量名,函数名.</li>
+</ul>
+<h2 id="二-函数参数"><a href="#二-函数参数" class="headerlink" title="二.函数参数"></a>二.函数参数</h2><blockquote>
+<p>分为两种情况,无参和有参.</p>
+</blockquote>
+<ol>
+<li>对于<strong>无参函数</strong>:即调用时不需要外界传进参数,<strong>内部已有数据,常用于类的成员函数</strong>(因为成员函数是拥有自身对象的私有成员变量的数据的).也可以用于无需参数的某一种功能函数,比如输出图形(用的比较少)</li>
+<li>对于<strong>有参函数</strong>:即调用时外界传进参数了,那么函数内部可使用的数据有<strong>函数已有的(比如私有成员变量)和外部传递进去的</strong>,该类函数一般需要<strong>对外界的数据进行处理</strong>可能会返回一定的值(不一定需要返回函数值,比如处理数据后,直接在函数内输出).</li>
+</ol>
+<h2 id="三-函数返回值"><a href="#三-函数返回值" class="headerlink" title="三.函数返回值"></a>三.函数返回值</h2><blockquote>
+<p>同样分为两种情况,无返回值和有返回值.</p>
+</blockquote>
+<ol>
+<li>对于<strong>无返回值函数</strong>:其功能已在函数内部实现,不需要外界对其再进行处理,一般为<strong>功能类函数</strong>.</li>
+<li>对于<strong>有返回值函数</strong>:此类函数一般是用于处理数据,再返回给外界,进行使用,一般为<strong>数据处理类函数</strong>.</li>
+</ol>
+<h2 id="四-函数参数和返回值类型"><a href="#四-函数参数和返回值类型" class="headerlink" title="四.函数参数和返回值类型"></a>四.函数参数和返回值类型</h2><blockquote>
+<p>这里主要讨论两种有些许复杂的参数类型,&amp; 和 const类型.</p>
+</blockquote>
+<ol>
+<li><p>&amp;类型</p>
+<ul>
+<li><strong>为何要使用&amp;类型?</strong>通过直接传进去&amp;类型的参数,函数调用传进去实参后,可直接对实参进行处理,而不是仅仅处理形参了,<strong>这对于需要修改数据时极为方便</strong>.但有人会说了,有时候我不想修改数据,那么只需要再类型前加上const即可避免修改数据,那有人可能又会说,为什么不直接使用Type name?这是因为引用传递效率高于将实参赋值给形参,养成一个好的习惯.</li>
+<li><strong>如何使用&amp;类型?</strong> int&amp; x(需要改变数据时);const int&amp; x(不想改变数据时,使用了引用传递效率更高,注意此时函数内部若是修改了数据将会报错).</li>
 </ul>
 </li>
-<li><p>对象<br><br>在上述理解了类以及它的特点之后,那么对象就很容易理解了.</p>
+<li><p>const类型的使用</p>
 <ul>
-<li><strong>什么是对象?</strong>对象是类的一个实例化,比如将水果类进行实例化,通过类定义一个对象<strong>Fruit fruit(_size, _shape, _color);</strong>通过构造函数赋予该对象具体的属性值,将其特殊化,有了这些具体属性值的对象就是一个具体的对象,我们可以知道它到底是苹果/梨子还是西瓜了.</li>
-<li><strong>对象有什么特点?</strong>由于在类中的所有方法对于对象是通用的(因为抽象于对象),故对象可以使用类的方法.而且对象的属性只有通过自己类的方法才能访问,外界是不能访问的.</li>
-</ul>
-</li>
-<li><p>非成员函数<br><br>在谈什么是非成员函数之前,明白什么是成员函数,顾名思义,作为成员的函数,类成员的函数.</p>
-<ul>
-<li>因此,不在类中定义的函数就是非成员函数,但是在同一个名字空间中的非成员函数一般与类的对象是有关系的,一般是以类的对象作为参数,对其进行一定的操作.</li>
-<li>特别注意一下,友元函数也是一种非成员函数,作为一种特殊的非成员函数.可以有成员函数的权限,访问私有成员变量.</li>
-</ul>
-</li>
-<li><p>友元函数<br><br>对友元函数进行展开一下.</p>
-<ul>
-<li><strong>什么是友元函数?</strong>友元函数是以friend声明的,其声明在类中,一般在public中.作为一种特殊的非成员函数.可以有成员函数的权限,访问私有成员变量.</li>
-<li><strong>友元函数有什么作用?</strong>多用于<strong>运算符的重载,尤其是需要改变类对象和另一个数据的使用数据的运算符重载.</strong>比如cin&lt;&lt;fruit(若使用成员函数重载运算符,应当是fruit&lt;&lt;cin).</li>
-</ul>
-</li>
-<li><p>运算符重载<br><br>运算符重载有两种方式,成员函数及非成员友元函数.</p>
-<ul>
-<li>成员函数重载:returnType <strong>operator</strong> +-<em>/(otherType){};重载后的关系为stu +-</em>/ x</li>
-<li>非成员函数重载:returnType <strong>operator</strong> =-<em>/(otherType, stu){};重载后的顺序为括号里的顺序,因此可以随意更改顺序.比如*</em>cin &lt;&lt; Data** :就是一个重载&lt;&lt;运算符的例子.</li>
-<li>运算符重载后是有功能的,其功能一般保持原来的规则,但是使用对象会发生变化.</li>
+<li>const在函数参数中的使用:在&amp;的使用中起到的作用如上,当然<strong>还不止时避免数据被修改</strong>,另一方面,可以<strong>增大函数传入实参种类的范围,还可以传递常量作为函数的实参</strong>(当然非常量也可),若是没加const则不能传递常量作为实参.</li>
+<li>const在函数括号后面的使用,如void function() const;(此函数较为简单,无参数,无返回值).此const的作用是:<strong>可以避免对象的私有成员被修改</strong>,一旦修改对象的私有成员即会报错.因此,当我们只想访问私有成员变量而不是修改它时,可以加上const.</li>
 </ul>
 </li>
 </ol>

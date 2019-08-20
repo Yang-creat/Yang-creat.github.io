@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>函数的使用</title>
+      <link href="/2019/CPP%E5%AD%A6%E4%B9%A0/%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+      <url>/2019/CPP%E5%AD%A6%E4%B9%A0/%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一-函数命名"><a href="#一-函数命名" class="headerlink" title="一.函数命名"></a>一.函数命名</h2><blockquote><p>函数名称作为标识作用,最好通过名字就能知道函数的功能,有一定的命名规则</p></blockquote><ol><li><strong>设置值的函数</strong>:setFunction(),常用于改变类私有变量的值的函数命名.</li><li><strong>获得值的函数</strong>:getFunction(),常用于获得私有变量的值的函数命名.</li></ol><p>补充:关于命名大小写的问题,总结如下:</p><ul><li>全大写:常量名,用_分割单词;</li><li>全小写:变量名,函数名,用_分割单词;</li><li>大小混合:即用单词首字母大写分割单词,用于变量名,函数名.</li></ul><h2 id="二-函数参数"><a href="#二-函数参数" class="headerlink" title="二.函数参数"></a>二.函数参数</h2><blockquote><p>分为两种情况,无参和有参.</p></blockquote><ol><li>对于<strong>无参函数</strong>:即调用时不需要外界传进参数,<strong>内部已有数据,常用于类的成员函数</strong>(因为成员函数是拥有自身对象的私有成员变量的数据的).也可以用于无需参数的某一种功能函数,比如输出图形(用的比较少)</li><li>对于<strong>有参函数</strong>:即调用时外界传进参数了,那么函数内部可使用的数据有<strong>函数已有的(比如私有成员变量)和外部传递进去的</strong>,该类函数一般需要<strong>对外界的数据进行处理</strong>可能会返回一定的值(不一定需要返回函数值,比如处理数据后,直接在函数内输出).</li></ol><h2 id="三-函数返回值"><a href="#三-函数返回值" class="headerlink" title="三.函数返回值"></a>三.函数返回值</h2><blockquote><p>同样分为两种情况,无返回值和有返回值.</p></blockquote><ol><li>对于<strong>无返回值函数</strong>:其功能已在函数内部实现,不需要外界对其再进行处理,一般为<strong>功能类函数</strong>.</li><li>对于<strong>有返回值函数</strong>:此类函数一般是用于处理数据,再返回给外界,进行使用,一般为<strong>数据处理类函数</strong>.</li></ol><h2 id="四-函数参数和返回值类型"><a href="#四-函数参数和返回值类型" class="headerlink" title="四.函数参数和返回值类型"></a>四.函数参数和返回值类型</h2><blockquote><p>这里主要讨论两种有些许复杂的参数类型,&amp; 和 const类型.</p></blockquote><ol><li><p>&amp;类型</p><ul><li><strong>为何要使用&amp;类型?</strong>通过直接传进去&amp;类型的参数,函数调用传进去实参后,可直接对实参进行处理,而不是仅仅处理形参了,<strong>这对于需要修改数据时极为方便</strong>.但有人会说了,有时候我不想修改数据,那么只需要再类型前加上const即可避免修改数据,那有人可能又会说,为什么不直接使用Type name?这是因为引用传递效率高于将实参赋值给形参,养成一个好的习惯.</li><li><strong>如何使用&amp;类型?</strong> int&amp; x(需要改变数据时);const int&amp; x(不想改变数据时,使用了引用传递效率更高,注意此时函数内部若是修改了数据将会报错).</li></ul></li><li><p>const类型的使用</p><ul><li>const在函数参数中的使用:在&amp;的使用中起到的作用如上,当然<strong>还不止时避免数据被修改</strong>,另一方面,可以<strong>增大函数传入实参种类的范围,还可以传递常量作为函数的实参</strong>(当然非常量也可),若是没加const则不能传递常量作为实参.</li><li>const在函数括号后面的使用,如void function() const;(此函数较为简单,无参数,无返回值).此const的作用是:<strong>可以避免对象的私有成员被修改</strong>,一旦修改对象的私有成员即会报错.因此,当我们只想访问私有成员变量而不是修改它时,可以加上const.</li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> CPP学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>类和对象以及非成员函数的理解</title>
       <link href="/2019/CPP%E5%AD%A6%E4%B9%A0/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E4%BB%A5%E5%8F%8A%E9%9D%9E%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E7%9A%84%E7%90%86%E8%A7%A3/"/>
       <url>/2019/CPP%E5%AD%A6%E4%B9%A0/%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E4%BB%A5%E5%8F%8A%E9%9D%9E%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E7%9A%84%E7%90%86%E8%A7%A3/</url>
