@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Vim使用技巧(一)</title>
+      <link href="/2019/null/Vim%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7-%E4%B8%80/"/>
+      <url>/2019/null/Vim%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7-%E4%B8%80/</url>
+      
+        <content type="html"><![CDATA[<h3 id="一-Vim移动操作技巧-均在普通模式下"><a href="#一-Vim移动操作技巧-均在普通模式下" class="headerlink" title="一.Vim移动操作技巧(均在普通模式下)"></a>一.Vim移动操作技巧(均在普通模式下)</h3><hr><h4 id="1-快速翻页"><a href="#1-快速翻页" class="headerlink" title="1. 快速翻页"></a>1. 快速翻页</h4><ul><li><c-f>:下一页</c-f></li><li><c-b>:上一页</c-b></li></ul><h4 id="2-同一页面快速跳跃"><a href="#2-同一页面快速跳跃" class="headerlink" title="2. 同一页面快速跳跃"></a>2. 同一页面快速跳跃</h4><ul><li>shirft-h:顶部</li><li>shirft-m:中部</li><li>shirft-l:底部</li></ul><h4 id="3-快速跳行-通过查找"><a href="#3-快速跳行-通过查找" class="headerlink" title="3. 快速跳行(通过查找)"></a>3. 快速跳行(通过查找)</h4><ul><li>/+内容:向下查找到相应位置</li><li>(shirft+/ = ?) + 内容: 向上查找到相应位置</li></ul><h4 id="4-行内移动"><a href="#4-行内移动" class="headerlink" title="4. 行内移动"></a>4. 行内移动</h4><h5 id="1-查找字母定位"><a href="#1-查找字母定位" class="headerlink" title="(1)查找字母定位"></a>(1)查找字母定位</h5><ul><li>f + 字母: 向后查找到相应字母处</li><li>F + 字母:向前查找到相应字母处</li><li>t + 字母: 向后查找到相应字母的前一个字母处</li><li>T + 字母: 向前查找到相应字母的前一个字母处</li></ul><h5 id="3-特殊移动"><a href="#3-特殊移动" class="headerlink" title="(3)特殊移动"></a>(3)特殊移动</h5><ul><li>0 : 向行首移动, 索引为0的位置</li><li>$ : 向后末尾移动, 字符为截止符的位置</li></ul><h5 id="2-单词移动"><a href="#2-单词移动" class="headerlink" title="(2)单词移动"></a>(2)单词移动</h5><ul><li>w: 向后移动一个单词(到下一个单词的第一个字符, 其他字符串为一个单词,比如({}))</li><li>b: 向前移动一个单词(到上一个单词的第一个字符, 其他字符串为一个单词,比如({}))</li><li>e: 首先移到当前单词的最后一个字符, 再向下一个单词的最后一个字符移动</li><li>W: 向后一个字符串的第一个字符移动(字符串为空格分隔)</li><li>B: 向前一个字符串的第一个字符移动</li><li>E: 向后一个字符串的最后一个字符移动</li></ul><h4 id="5-定位返回"><a href="#5-定位返回" class="headerlink" title="5. 定位返回"></a>5. 定位返回</h4><ul><li>mm: 标记当前位置, 按`m 返回到标记的位置</li><li>`` : 返回到移动之前的位置</li><li><c-o>: 返回上一步; <c-i>: 进一步</c-i></c-o></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>函数的使用</title>
       <link href="/2019/CPP%E5%AD%A6%E4%B9%A0/%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
       <url>/2019/CPP%E5%AD%A6%E4%B9%A0/%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</url>

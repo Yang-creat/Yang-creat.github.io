@@ -6,17 +6,17 @@
   <meta name="keywords" content>
   <meta name="description" content="类和对象以及非成员函数的理解 | Blog of Mr.Yang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="C++最大的不同于C语言的特点就是:面向对象编程(OOP).而在面向对象编程中,新的概念类和对象等比较抽象,难以理解,以下是我对其的一些理解和总结.   类  什么是类?在我看来,类是一个集合的抽象,比如苹果/梨子/西瓜可以抽象为一个类,即水果. 类有什么特点?类中抽象了这个集合的属性(即数据),行为(即方法/函数),比如对于一个水果类,可以抽象出:从属性看:size/shape/color等;">
+<meta name="description" content="一.Vim移动操作技巧(均在普通模式下) 1. 快速翻页 :下一页 :上一页  2. 同一页面快速跳跃 shirft-h:顶部 shirft-m:中部 shirft-l:底部  3. 快速跳行(通过查找) /+内容:向下查找到相应位置 (shirft+/ = ?) + 内容: 向上查找到相应位置  4. 行内移动(1)查找字母定位 f + 字母: 向后查找到相应字母处 F + 字母:向前查找到相应">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类和对象以及非成员函数的理解">
-<meta property="og:url" content="http://Yang-creat.github.io/2019/CPP学习/类和对象以及非成员函数的理解/index.html">
+<meta property="og:title" content="Vim使用技巧(一)">
+<meta property="og:url" content="http://Yang-creat.github.io/2019/null/Vim使用技巧-一/index.html">
 <meta property="og:site_name" content="Blog of Mr.Yang">
-<meta property="og:description" content="C++最大的不同于C语言的特点就是:面向对象编程(OOP).而在面向对象编程中,新的概念类和对象等比较抽象,难以理解,以下是我对其的一些理解和总结.   类  什么是类?在我看来,类是一个集合的抽象,比如苹果/梨子/西瓜可以抽象为一个类,即水果. 类有什么特点?类中抽象了这个集合的属性(即数据),行为(即方法/函数),比如对于一个水果类,可以抽象出:从属性看:size/shape/color等;">
+<meta property="og:description" content="一.Vim移动操作技巧(均在普通模式下) 1. 快速翻页 :下一页 :上一页  2. 同一页面快速跳跃 shirft-h:顶部 shirft-m:中部 shirft-l:底部  3. 快速跳行(通过查找) /+内容:向下查找到相应位置 (shirft+/ = ?) + 内容: 向上查找到相应位置  4. 行内移动(1)查找字母定位 f + 字母: 向后查找到相应字母处 F + 字母:向前查找到相应">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-20T06:54:44.116Z">
+<meta property="og:updated_time" content="2019-10-17T01:21:21.938Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="类和对象以及非成员函数的理解">
-<meta name="twitter:description" content="C++最大的不同于C语言的特点就是:面向对象编程(OOP).而在面向对象编程中,新的概念类和对象等比较抽象,难以理解,以下是我对其的一些理解和总结.   类  什么是类?在我看来,类是一个集合的抽象,比如苹果/梨子/西瓜可以抽象为一个类,即水果. 类有什么特点?类中抽象了这个集合的属性(即数据),行为(即方法/函数),比如对于一个水果类,可以抽象出:从属性看:size/shape/color等;">
+<meta name="twitter:title" content="Vim使用技巧(一)">
+<meta name="twitter:description" content="一.Vim移动操作技巧(均在普通模式下) 1. 快速翻页 :下一页 :上一页  2. 同一页面快速跳跃 shirft-h:顶部 shirft-m:中部 shirft-l:底部  3. 快速跳行(通过查找) /+内容:向下查找到相应位置 (shirft+/ = ?) + 内容: 向上查找到相应位置  4. 行内移动(1)查找字母定位 f + 字母: 向后查找到相应字母处 F + 字母:向前查找到相应">
 
 
 <link rel="icon" href="/img/mystar.jpg">
@@ -99,7 +99,15 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(10)</small></div></li>
+    <li><div class="all active">全部文章<small>(11)</small></div></li>
+    
+        
+            
+            <li><div data-rel="CPP学习">CPP学习<small>(3)</small></div>
+                
+            </li>
+            
+        
     
         
             
@@ -119,14 +127,6 @@
     
         
             
-            <li><div data-rel="CPP学习">CPP学习<small>(3)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
             <li><div data-rel="LOL">LOL<small>(1)</small></div>
                 
             </li>
@@ -135,13 +135,13 @@
     
         
             
-        
-    
-        
-            
             <li><div data-rel="认识电脑">认识电脑<small>(3)</small></div>
                 
             </li>
+            
+        
+    
+        
             
         
     
@@ -163,7 +163,7 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="10">
+<input type="hidden" id="yelog_site_posts_number" value="11">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -207,14 +207,6 @@
     
     <nav id="title-list-nav">
         
-        <a  class="工具 Hexo "
-           href="/2019/工具/Hexo/Hexo+GitHub搭建个人博客总结-1/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Hexo+GitHub搭建个人博客总结-1">Hexo+GitHub搭建个人博客总结-1</span>
-            <span class="post-date" title="2019-08-08 19:57:01">2019/08/08</span>
-        </a>
-        
         <a  class="CPP学习 "
            href="/2019/CPP学习/C-名字空间的理解/"
            data-tag=""
@@ -224,11 +216,11 @@
         </a>
         
         <a  class="工具 Hexo "
-           href="/2019/工具/Hexo/Hexo-GitHub搭建个人博客总结-2/"
+           href="/2019/工具/Hexo/Hexo+GitHub搭建个人博客总结-1/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="Hexo+GitHub搭建个人博客总结-2">Hexo+GitHub搭建个人博客总结-2</span>
-            <span class="post-date" title="2019-08-09 17:02:51">2019/08/09</span>
+            <span class="post-title" title="Hexo+GitHub搭建个人博客总结-1">Hexo+GitHub搭建个人博客总结-1</span>
+            <span class="post-date" title="2019-08-08 19:57:01">2019/08/08</span>
         </a>
         
         <a  class="LOL "
@@ -239,6 +231,14 @@
             <span class="post-date" title="2019-08-14 09:26:38">2019/08/14</span>
         </a>
         
+        <a  class="工具 Hexo "
+           href="/2019/工具/Hexo/Hexo-GitHub搭建个人博客总结-2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo+GitHub搭建个人博客总结-2">Hexo+GitHub搭建个人博客总结-2</span>
+            <span class="post-date" title="2019-08-09 17:02:51">2019/08/09</span>
+        </a>
+        
         <a  class="认识电脑 "
            href="/2019/认识电脑/关于win10系统输入法问题/"
            data-tag=""
@@ -247,12 +247,20 @@
             <span class="post-date" title="2019-08-15 10:03:32">2019/08/15</span>
         </a>
         
-        <a  class="CPP学习 "
-           href="/2019/CPP学习/函数的使用/"
+        <a  class=""
+           href="/2019/null/Vim使用技巧-一/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="函数的使用">函数的使用</span>
-            <span class="post-date" title="2019-08-20 15:20:28">2019/08/20</span>
+            <span class="post-title" title="Vim使用技巧(一)">Vim使用技巧(一)</span>
+            <span class="post-date" title="2019-10-17 09:20:37">2019/10/17</span>
+        </a>
+        
+        <a  class="认识电脑 "
+           href="/2019/认识电脑/更改键盘键位/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="更改键盘键位">更改键盘键位</span>
+            <span class="post-date" title="2019-08-15 11:28:02">2019/08/15</span>
         </a>
         
         <a  class="思维模型 "
@@ -263,12 +271,12 @@
             <span class="post-date" title="2019-08-12 10:58:02">2019/08/12</span>
         </a>
         
-        <a  class="认识电脑 "
-           href="/2019/认识电脑/更改键盘键位/"
+        <a  class="CPP学习 "
+           href="/2019/CPP学习/函数的使用/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="更改键盘键位">更改键盘键位</span>
-            <span class="post-date" title="2019-08-15 11:28:02">2019/08/15</span>
+            <span class="post-title" title="函数的使用">函数的使用</span>
+            <span class="post-date" title="2019-08-20 15:20:28">2019/08/20</span>
         </a>
         
         <a  class="CPP学习 "
