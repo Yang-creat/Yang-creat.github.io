@@ -4,6 +4,216 @@
   
     
     <entry>
+      <title>11.测试代码</title>
+      <link href="/2020/%E7%BC%96%E7%A8%8B/Python/11-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81/"/>
+      <url>/2020/%E7%BC%96%E7%A8%8B/Python/11-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<h3 id="11-测试代码"><a href="#11-测试代码" class="headerlink" title="11. 测试代码"></a>11. 测试代码</h3><hr><h4 id="11-1-测试函数"><a href="#11-1-测试函数" class="headerlink" title="11.1 测试函数"></a>11.1 测试函数</h4><blockquote><p>对于所编写的函数, 我们需要测试其健壮性, 即对各种情况都能够处理, 不至于在某种情况下使得程序崩溃. python中通过特定的结构来测试函数的健壮性. </p></blockquote><h5 id="一-单元测试和测试用例"><a href="#一-单元测试和测试用例" class="headerlink" title="一. 单元测试和测试用例"></a>一. 单元测试和测试用例</h5><p>使用模块unittest进行代码测试. 单元测试用于核实函数某个方面没有问题; 测试用例是一组单元测试, 这些单元测试一起测试函数在各种情况下行为都符合要求.</p><h5 id="二-可通过的测试"><a href="#二-可通过的测试" class="headerlink" title="二. 可通过的测试"></a>二. 可通过的测试</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> name_function <span class="keyword">import</span> get_formatted_name</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NamesTestCase</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_first_last_name</span><span class="params">(slef)</span>:</span></span><br><span class="line">        formatted_name = get_formatted_name(<span class="string">'janis'</span>, <span class="string">'joplin'</span>)</span><br><span class="line">        self.assertEqual(formatted_name, <span class="string">'Janis Joplin'</span>)</span><br><span class="line">        </span><br><span class="line">unittest.main()</span><br></pre></td></tr></table></figure><ol><li>导入unittest模块以及测试函数</li><li>创建测试类, 命名包括Test字样, 并继承unittest.TestCase类</li><li>定义测试方法, 命名必须以test开头, 系统会自动运行</li><li>方法内部调用了函数以及使用了测试实参, 并通过断言将结果与标准结果比对, 若函数结果与标准结果相同, 则会返回ok, 否则返回failed.</li><li>通过unittest.main()自动执行.<h5 id="三-测试若未通过怎么办"><a href="#三-测试若未通过怎么办" class="headerlink" title="三. 测试若未通过怎么办"></a>三. 测试若未通过怎么办</h5><blockquote><p>说明函数结果有错误, 需要在此实参下函数不能得到正确结果, 需要修改函数.</p></blockquote></li></ol><h5 id="四-添加新测试"><a href="#四-添加新测试" class="headerlink" title="四. 添加新测试"></a>四. 添加新测试</h5><p>可以通过添加另一个方法用来测试其他的实例是否正确.</p><h4 id="11-2-测试类"><a href="#11-2-测试类" class="headerlink" title="11.2 测试类"></a>11.2 测试类</h4><h5 id="一-各种断言方法"><a href="#一-各种断言方法" class="headerlink" title="一. 各种断言方法"></a>一. 各种断言方法</h5><p>除了上述的assertEqual断言方法还有其他的断言方法.</p><ol><li>assertEqual(a, b), 核实a == b</li><li>assertNotEqual(a, b, 核实a != b</li><li>assertTrue(x), 核实x为True</li><li>assertFalse(x), 核实x为False</li><li>assertIn(item, list), 核实item在list中</li><li>assertNotIn(item, list), 核实item不在list中<h5 id="二-方法setUp"><a href="#二-方法setUp" class="headerlink" title="二. 方法setUp()"></a>二. 方法setUp()</h5>在unittest.TestCase类中包含了方法setUp(), 使得我们只需要创建这些对象一次, 在每个测试方法中都可以使用他们<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">question = <span class="string">"what language did you first learn to speak?"</span></span><br><span class="line">self.my_survey = AnomymousSurvey(question)</span><br><span class="line">self.responses = [<span class="string">'English'</span>, <span class="string">'Spanish'</span>, <span class="string">'Mandarin'</span>]</span><br></pre></td></tr></table></figure></li></ol><blockquote><p>在setUp中初始化了三个元素, 在后面的测试方法中可以直接使用.</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>10.文件与异常</title>
+      <link href="/2020/%E7%BC%96%E7%A8%8B/Python/10-%E6%96%87%E4%BB%B6%E4%B8%8E%E5%BC%82%E5%B8%B8/"/>
+      <url>/2020/%E7%BC%96%E7%A8%8B/Python/10-%E6%96%87%E4%BB%B6%E4%B8%8E%E5%BC%82%E5%B8%B8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="10-文件和异常"><a href="#10-文件和异常" class="headerlink" title="10. 文件和异常"></a>10. 文件和异常</h3><hr><h4 id="10-1-从文件中读取数据"><a href="#10-1-从文件中读取数据" class="headerlink" title="10.1 从文件中读取数据"></a>10.1 从文件中读取数据</h4><h5 id="一-读取整个文件"><a href="#一-读取整个文件" class="headerlink" title="一. 读取整个文件"></a>一. 读取整个文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'filename.txt'</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">    contents = file_object.read()</span><br><span class="line">    print(contents)</span><br></pre></td></tr></table></figure><ol><li>打开文件, 通过open()函数, 传入文件, 从当前目录中寻找</li><li>with在不需要文件时自动将其关闭, 当然使用close()函数也能关闭文件, 但是若是出现bug导致close()未执行, 则可能导致文件数据丢失, 因此最好用with</li><li>as 用于起别名, 将打开的文件赋给flie_object</li><li>read()函数用于读取文件对象中的内容, 注意read()会多出一个空行</li></ol><h5 id="二-关于文件路径"><a href="#二-关于文件路径" class="headerlink" title="二. 关于文件路径"></a>二. 关于文件路径</h5><ol><li>可以使用相对路径, 从当前目录找</li><li>可以使用绝对路径, 注意windows中是用反斜杠\分隔目录</li></ol><h5 id="三-逐行读取"><a href="#三-逐行读取" class="headerlink" title="三. 逐行读取"></a>三. 逐行读取</h5><p>如何遍历文件中每一行的数据? 通过循环即可.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = <span class="string">'filename.txt'</span></span><br><span class="line"><span class="keyword">with</span> open(filename) <span class="keyword">as</span> file_object:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> file_object:</span><br><span class="line">        print(line)</span><br></pre></td></tr></table></figure><p>注意: 由于每一行末尾有个看不见的换行符, 会打印出来, 同时print()函数会自动在末尾加一个换行, 因此会有两个空行, 可以使用rstrip()消除空行.</p><h5 id="四-创建一个包含文件各行内容的列表"><a href="#四-创建一个包含文件各行内容的列表" class="headerlink" title="四. 创建一个包含文件各行内容的列表"></a>四. 创建一个包含文件各行内容的列表</h5><p>将文件中的数据每一行都存在一个列表中:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">filename = <span class="string">'filename.txt'</span></span><br><span class="line"><span class="keyword">with</span> open(filename) <span class="keyword">as</span> file_object:</span><br><span class="line">    lines = file_object.readlines()</span><br></pre></td></tr></table></figure><blockquote><p>通过readlines()函数可以读文件中的每一行, 并将其存在一个列表中. 每一行后面会加一个换行符</p></blockquote><blockquote><p>补充: 可以通过int(), float(), str()进行数据类型转换</p></blockquote><h5 id="五-使用文件中的内容"><a href="#五-使用文件中的内容" class="headerlink" title="五. 使用文件中的内容"></a>五. 使用文件中的内容</h5><p>将存在列表中的每一行数据拿出来使用:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将列表中的字符串拼接为一个, 并打印出到小数点后50位</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">    pi_string += line.strip()</span><br><span class="line">print(pi_string[:<span class="number">52</span>]</span><br></pre></td></tr></table></figure><h4 id="10-2-写入文件"><a href="#10-2-写入文件" class="headerlink" title="10.2 写入文件"></a>10.2 写入文件</h4><h5 id="一-写入空文件"><a href="#一-写入空文件" class="headerlink" title="一. 写入空文件"></a>一. 写入空文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">filename = <span class="string">'filename.txt'</span></span><br><span class="line"><span class="keyword">with</span> open(filename, <span class="string">'w'</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">    file_object.wirte(<span class="string">"I love programming"</span>)</span><br></pre></td></tr></table></figure><blockquote><p>打开文件时, 有三种模式, r(读), w(写), a(追加), r+(读写), 默认为r, 注意通过w模式写入时, 会清空文件中的内容.</p></blockquote><h5 id="二-附加内容到文件"><a href="#二-附加内容到文件" class="headerlink" title="二. 附加内容到文件"></a>二. 附加内容到文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 改为a模式即可</span></span><br><span class="line">    filename = <span class="string">'filename.txt'</span></span><br><span class="line">    <span class="keyword">with</span> open(filename, <span class="string">'a'</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">        file_object.wirte(<span class="string">"I love programming"</span>)</span><br></pre></td></tr></table></figure><h4 id="10-3-异常"><a href="#10-3-异常" class="headerlink" title="10.3 异常"></a>10.3 异常</h4><blockquote><p>为什么要处理异常: 对于可能会报错的程序语句, 我们需要进行处理, 使其不妨碍程序的继续进行.</p></blockquote><h5 id="一-使用try-except代码块"><a href="#一-使用try-except代码块" class="headerlink" title="一. 使用try-except代码块"></a>一. 使用try-except代码块</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    answer = first_num / second_num</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    print(<span class="string">"you can't divide by zero!"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(answer)</span><br></pre></td></tr></table></figure><p>执行流程如下: 对于可能报错的代码放在try中, 若发生错误,且是exctpt中的异常, 比如是ZeroDivisionError, 则执行except中内容, 否则执行else中内容. </p><h5 id="二-常见的异常"><a href="#二-常见的异常" class="headerlink" title="二. 常见的异常"></a>二. 常见的异常</h5><ul><li>0除数异常: ZeroDivisionError</li><li>文件未找到异常: FileNotFoundError</li><li>except中也可以什么都不做, 用pass即可.</li></ul><blockquote><p>使用split()函数可以将字符串根据空格拆分为多个部分, 并存在一个列表中, 可用于单词计数.</p></blockquote><h4 id="10-4-存储数据"><a href="#10-4-存储数据" class="headerlink" title="10.4 存储数据"></a>10.4 存储数据</h4><blockquote><p>模块json可以将简单的pytho数据结构存储到文件中, 如列表, 字典</p></blockquote><h5 id="一-json-dump-和json-load"><a href="#一-json-dump-和json-load" class="headerlink" title="一. json.dump()和json.load()"></a>一. json.dump()和json.load()</h5><ol><li><p>json.dump()接受两个实参: 要存储的数据以及可用于存储数据的文件对象</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line">numbers = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>]</span><br><span class="line">filename = <span class="string">'numbers.json'</span></span><br><span class="line"><span class="keyword">with</span> open(filenname, <span class="string">'w'</span>) <span class="keyword">as</span> f_obj:</span><br><span class="line">    json.dump(numbers, f_obj)</span><br></pre></td></tr></table></figure></li><li><p>json.load(): 直接读入json中的数据</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>9.类</title>
+      <link href="/2020/%E7%BC%96%E7%A8%8B/Python/9-%E7%B1%BB/"/>
+      <url>/2020/%E7%BC%96%E7%A8%8B/Python/9-%E7%B1%BB/</url>
+      
+        <content type="html"><![CDATA[<h3 id="9-类"><a href="#9-类" class="headerlink" title="9.类"></a>9.类</h3><hr><h4 id="9-1-创建和使用类"><a href="#9-1-创建和使用类" class="headerlink" title="9.1 创建和使用类"></a>9.1 创建和使用类</h4><h5 id="一-创建类"><a href="#一-创建类" class="headerlink" title="一. 创建类"></a>一. 创建类</h5><ol><li>定义类: 类名首字母大写</li><li>方法<strong>init</strong>()<ul><li>前后两个_</li><li>其中必有形参self: __ init __ (self, name, age), self用于传入实例本身的引用, 使得实例可以访问类中的属性和方法. 意思是, 当创建实例时, 需要将实例与类相关联, 也就是使用self关联实例和类, 类中本来对self的操作也就是对实例的操作了; 类似C++中的构造函数. 同时另外两个形参也就是传入了实例的属性.</li><li>类中的所有方法都是对self.name 进行操作了. <h5 id="二-创建实例"><a href="#二-创建实例" class="headerlink" title="二. 创建实例"></a>二. 创建实例</h5><blockquote><p>通过 object = Object(‘name’)即可创建一个实例</p></blockquote></li></ul></li><li>访问属性<br> python中有点不同的是可以直接使用实例的变量,C++中需要调用方法才能对私有变量进行操作.</li><li>调用方法<br> 直接使用 实例名.方法名() 即可调用方法</li></ol><h4 id="9-2-使用类和实例"><a href="#9-2-使用类和实例" class="headerlink" title="9.2 使用类和实例"></a>9.2 使用类和实例</h4><h5 id="一-给属性指定默认值"><a href="#一-给属性指定默认值" class="headerlink" title="一. 给属性指定默认值"></a>一. 给属性指定默认值</h5><p>由于类中在__ init __ (self, name=’’, age) 中定义了形参, 在创建实例时需要给name 和 age赋值, 当然也可以使用默认值, 比如name 的默认值就是空的.</p><h5 id="二-修改属性的值"><a href="#二-修改属性的值" class="headerlink" title="二. 修改属性的值"></a>二. 修改属性的值</h5><ol><li>直接修改属性的值: 利用赋值的方法即可修改属性值, 不同于C++</li><li>通过方法修改属性的值: 类似于C++</li><li>通过方法对属性的值进行递增: 同2, 也就是方法对属性值进行修改</li></ol><h4 id="9-3-继承"><a href="#9-3-继承" class="headerlink" title="9.3 继承"></a>9.3 继承</h4><blockquote><p>可以从已有的类衍生出来, 成为子类, 原来的类成为父类</p></blockquote><h5 id="一-子类的方法-init-继承父类的属性和方法"><a href="#一-子类的方法-init-继承父类的属性和方法" class="headerlink" title="一. 子类的方法__ init __ () (继承父类的属性和方法)"></a>一. 子类的方法__ init __ () (继承父类的属性和方法)</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricCar</span><span class="params">(car)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, make, modle, year)</span>:</span></span><br><span class="line">        super().__init__(make, modle, year)</span><br></pre></td></tr></table></figure><p>也就是在定义<strong>init</strong>函数时有点变化, 父类的形参在子类中必须要有, 当然可以增加一些形参(属性), 通过super().<strong>init</strong>(make)即可将属性传入父类中, 从而使得子类有了父类的属性和方法</p><h5 id="二-子类新的属性和方法"><a href="#二-子类新的属性和方法" class="headerlink" title="二. 子类新的属性和方法"></a>二. 子类新的属性和方法</h5><p>   在子类 __ init __ () 函数中增加新的属性, 可以为默认值; 随后定义的方法均为新的方法.</p><h5 id="三-重写父类已有的方法"><a href="#三-重写父类已有的方法" class="headerlink" title="三. 重写父类已有的方法"></a>三. 重写父类已有的方法</h5><p>   直接对父类的方法重写即可.</p><h5 id="四-将实例用作属性"><a href="#四-将实例用作属性" class="headerlink" title="四. 将实例用作属性"></a>四. 将实例用作属性</h5><p>   可以将某一个类的实例作为另一个类的属性, 相当于将大类拆分成很多小类</p><h4 id="9-4-导入类"><a href="#9-4-导入类" class="headerlink" title="9.4 导入类"></a>9.4 导入类</h4><ol><li>导入类<br> 通过from module_name import class1_name, class2_name, 即通过逗号分隔导入多个类.</li><li>导入整个模块<br> 直接import module_name, 需要通过module_name.class_name()来访问类</li><li>导入模块中所有类<br> from module_name import * </li></ol><blockquote><p>以上的三种类的导入均与函数的导入相同, 要么是直接导入模块, 用点.进行访问; 要么是导入模块中特定的函数/类, 可以直接通过名字使用; 要么导入模块中所有的函数/类(不太推荐, 当然确定无冲突时可以使用). </p></blockquote><h4 id="9-5-类编码风格"><a href="#9-5-类编码风格" class="headerlink" title="9.5 类编码风格"></a>9.5 类编码风格</h4><ol><li>类的命名不同于函数: 类第一个字母大写, 且使用驼峰命名法</li><li>实例的命名同一般变量, 使用小写格式, 用下划线分隔</li><li>类定义后, 通过文档字符串描述类的功能</li><li>使用一个空格分隔方法, 使用两个空格分隔类</li><li>同时导入标准库中的模块和自己编写的模块时, 先导入标准库中的模块, 再使用一个空行, 再导入自己的模块.</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>8.函数</title>
+      <link href="/2020/%E7%BC%96%E7%A8%8B/Python/8-%E5%87%BD%E6%95%B0/"/>
+      <url>/2020/%E7%BC%96%E7%A8%8B/Python/8-%E5%87%BD%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h3 id="7-用户输入和while循环"><a href="#7-用户输入和while循环" class="headerlink" title="7. 用户输入和while循环"></a>7. 用户输入和while循环</h3><hr><h4 id="7-1-input-工作原理"><a href="#7-1-input-工作原理" class="headerlink" title="7.1 input()工作原理"></a>7.1 input()工作原理</h4><ol><li><p>input()输入</p><ul><li>name = input(), 可加入提示字符串.</li></ul></li><li><p>int()转换类型</p><ul><li>num = int(input(“Please input a num: “))</li></ul></li><li><p>求模运算</p><ul><li>%可以返回余数</li></ul></li><li><p>python 2.7中的输入函数</p><ul><li>使用raw_input()进行输入</li></ul></li></ol><h4 id="7-2-while-循环"><a href="#7-2-while-循环" class="headerlink" title="7.2 while()循环"></a>7.2 while()循环</h4><ol><li><p><strong>使用标志</strong></p><ul><li>定义一个布尔变量, 用于判断当前某个任务的状态, 如active = True: 适用于多个影响因素的时候. 只需要更改active即可退出循环.</li></ul></li><li><p>使用break: 退出循环(包括for)</p></li><li><p>使用continue: 跳出一次循环(包括for)</p></li></ol><blockquote><p>注意: 必须要有退出循环的条件.</p></blockquote><h4 id="7-3-使用while循环处理列表和字典"><a href="#7-3-使用while循环处理列表和字典" class="headerlink" title="7.3 使用while循环处理列表和字典"></a>7.3 使用while循环处理列表和字典</h4><ol><li><p>在列表之间移动元素</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">unconfirmed_users = [<span class="string">'alice'</span>, <span class="string">'brian'</span>, <span class="string">'candace'</span>]</span><br><span class="line">confirmed_users = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> unconfirmed_users:</span><br><span class="line">    current_user = unconfirmed_users.pop()</span><br><span class="line">    print(<span class="string">"Verying user: "</span> + current_user.title())</span><br><span class="line">    confirmed_users.append(current_user)</span><br></pre></td></tr></table></figure></li><li><p>删除包含特定值的所有列表元素</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="string">"cat"</span> <span class="keyword">in</span> pets:</span><br><span class="line">    pets.remove(<span class="string">"cat"</span>)</span><br></pre></td></tr></table></figure></li></ol><blockquote><p>补充: ‘cat’ in pets 是一个逻辑判断语句, 是否在里面</p></blockquote><ol start="3"><li>使用input()填充字典<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">responses = &#123;&#125;</span><br><span class="line">polling_active = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> polling_active:</span><br><span class="line">    name = input(<span class="string">"What is your name? "</span>)</span><br><span class="line">    response = input(<span class="string">"Which moutain would you like to climb someday?"</span>)</span><br><span class="line">    </span><br><span class="line">    responses[name] = response</span><br><span class="line">    </span><br><span class="line">    repeat = input(<span class="string">"Would you like to let another person respond?"</span>)</span><br><span class="line">    <span class="keyword">if</span> repeat == <span class="string">"no"</span>:</span><br><span class="line">        active = <span class="literal">False</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>7.用户输入和while循环</title>
+      <link href="/2020/%E7%BC%96%E7%A8%8B/Python/7-%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5%E5%92%8Cwhile%E5%BE%AA%E7%8E%AF/"/>
+      <url>/2020/%E7%BC%96%E7%A8%8B/Python/7-%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5%E5%92%8Cwhile%E5%BE%AA%E7%8E%AF/</url>
+      
+        <content type="html"><![CDATA[<h3 id="7-用户输入和while循环"><a href="#7-用户输入和while循环" class="headerlink" title="7. 用户输入和while循环"></a>7. 用户输入和while循环</h3><hr><h4 id="7-1-input-工作原理"><a href="#7-1-input-工作原理" class="headerlink" title="7.1 input()工作原理"></a>7.1 input()工作原理</h4><ol><li><p>input()输入</p><ul><li>name = input(), 可加入提示字符串.</li></ul></li><li><p>int()转换类型</p><ul><li>num = int(input(“Please input a num: “))</li></ul></li><li><p>求模运算</p><ul><li>%可以返回余数</li></ul></li><li><p>python 2.7中的输入函数</p><ul><li>使用raw_input()进行输入</li></ul></li></ol><h4 id="7-2-while-循环"><a href="#7-2-while-循环" class="headerlink" title="7.2 while()循环"></a>7.2 while()循环</h4><ol><li><p><strong>使用标志</strong></p><ul><li>定义一个布尔变量, 用于判断当前某个任务的状态, 如active = True: 适用于多个影响因素的时候. 只需要更改active即可退出循环.</li></ul></li><li><p>使用break: 退出循环(包括for)</p></li><li><p>使用continue: 跳出一次循环(包括for)</p></li></ol><blockquote><p>注意: 必须要有退出循环的条件.</p></blockquote><h4 id="7-3-使用while循环处理列表和字典"><a href="#7-3-使用while循环处理列表和字典" class="headerlink" title="7.3 使用while循环处理列表和字典"></a>7.3 使用while循环处理列表和字典</h4><ol><li><p>在列表之间移动元素</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">unconfirmed_users = [<span class="string">'alice'</span>, <span class="string">'brian'</span>, <span class="string">'candace'</span>]</span><br><span class="line">confirmed_users = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> unconfirmed_users:</span><br><span class="line">    current_user = unconfirmed_users.pop()</span><br><span class="line">    print(<span class="string">"Verying user: "</span> + current_user.title())</span><br><span class="line">    confirmed_users.append(current_user)</span><br></pre></td></tr></table></figure></li><li><p>删除包含特定值的所有列表元素</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="string">"cat"</span> <span class="keyword">in</span> pets:</span><br><span class="line">    pets.remove(<span class="string">"cat"</span>)</span><br></pre></td></tr></table></figure></li></ol><blockquote><p>补充: ‘cat’ in pets 是一个逻辑判断语句, 是否在里面</p></blockquote><ol start="3"><li>使用input()填充字典<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">responses = &#123;&#125;</span><br><span class="line">polling_active = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> polling_active:</span><br><span class="line">    name = input(<span class="string">"What is your name? "</span>)</span><br><span class="line">    response = input(<span class="string">"Which moutain would you like to climb someday?"</span>)</span><br><span class="line">    </span><br><span class="line">    responses[name] = response</span><br><span class="line">    </span><br><span class="line">    repeat = input(<span class="string">"Would you like to let another person respond?"</span>)</span><br><span class="line">    <span class="keyword">if</span> repeat == <span class="string">"no"</span>:</span><br><span class="line">        active = <span class="literal">False</span></span><br></pre></td></tr></table></figure></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>6.字典</title>
+      <link href="/2020/%E7%BC%96%E7%A8%8B/Python/6-%E5%AD%97%E5%85%B8/"/>
+      <url>/2020/%E7%BC%96%E7%A8%8B/Python/6-%E5%AD%97%E5%85%B8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="6-字典"><a href="#6-字典" class="headerlink" title="6. 字典"></a>6. 字典</h3><hr><h4 id="6-1-使用字典"><a href="#6-1-使用字典" class="headerlink" title="6.1 使用字典"></a>6.1 使用字典</h4><blockquote><p>字典中的元素时由键-值对组成的, 其中键位字符串, 值可以为任意类型.</p></blockquote><ol><li>访问字典中的值: dic_name[‘key’] 方括号中加上键值即可访问对应元素</li><li>添加值: 通过赋值dic_name[‘new_key’] = new_value即可直接添加</li><li>创建空字典: dic_name = {}, 然后通过赋值添加元素</li><li>修改值: 赋值修改</li><li>删除值: del dic_name[‘key’] 类似于列表</li><li>类似于对象的使用方法: <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">favorite_language = &#123;</span><br><span class="line">    <span class="string">'jen'</span>: <span class="string">'python'</span>,</span><br><span class="line">    <span class="string">'sarah'</span>: <span class="string">'c'</span>,</span><br><span class="line">    <span class="string">'edwar'</span>: <span class="string">'ruby'</span>,</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li></ol><blockquote><p>上面的例子是字典常用的初始化格式: 第一行输入左括号, 然后换行缩进4个空格, 末位加一个逗号, 最后换行加上右括号.<br><strong>补充:</strong><br>当一个字符串太长时, 应当将其拆分为多个语句, 使用+拼接,如:</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Sarah's favorite language is "</span> +</span><br><span class="line">       favorite_language[<span class="string">'sarah'</span>].title() +</span><br><span class="line">       <span class="string">'.'</span>)</span><br></pre></td></tr></table></figure><h4 id="6-2-遍历字典"><a href="#6-2-遍历字典" class="headerlink" title="6.2 遍历字典"></a>6.2 遍历字典</h4><ol><li><p>遍历所有元素: dic_name.items()</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> dic_name.items():</span><br><span class="line">    print(key)</span><br><span class="line">    print(value)</span><br></pre></td></tr></table></figure></li><li><p>遍历所有键: dic_name.keys() (默认为keys ,可以省略)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dic_name.keys():</span><br><span class="line">    print(key)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 省略keys()  </span></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dic_name:</span><br><span class="line">    print(key)</span><br></pre></td></tr></table></figure></li><li><p>按顺序遍历所有键: sorted(dic_name.keys())</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正向</span></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> sorted(dic_name.keys()):</span><br><span class="line">    print(key)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 逆向</span></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> sorted(dic_name.keys(), reverse = <span class="literal">True</span>):</span><br><span class="line">    print(key)</span><br></pre></td></tr></table></figure></li><li><p>遍历字典中所有的值: dic_name.values()</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> dic_name.values():</span><br><span class="line">    print(value)</span><br></pre></td></tr></table></figure></li></ol><p><strong>补充:</strong></p><blockquote><p>可以通过set()创建集合,从而消除相同元素(set()也是一个外部函数, 类似于list()):</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> language <span class="keyword">in</span> set(favorite_languages.values()):</span><br><span class="line">    print(language)</span><br></pre></td></tr></table></figure><h4 id="6-3-嵌套"><a href="#6-3-嵌套" class="headerlink" title="6.3 嵌套"></a>6.3 嵌套</h4><ol><li>存放字典的列表: 即一个列表中存放多个字典, 有点类似于对象数组.</li><li>存放列表的字典: 当需要对某一个键由多个描述时, 用列表.</li><li>字典的字典: 相当于二级结构, 树状图</li></ol><blockquote><p>总而言之, 列表存放同一类型数据. 可以存放字典, 也可以作为字典中的值; 同时, 字典中的值, 可以为列表, 也可以为字典.</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>5.If语句</title>
+      <link href="/2020/%E7%BC%96%E7%A8%8B/Python/5-If%E8%AF%AD%E5%8F%A5/"/>
+      <url>/2020/%E7%BC%96%E7%A8%8B/Python/5-If%E8%AF%AD%E5%8F%A5/</url>
+      
+        <content type="html"><![CDATA[<h3 id="4-操作列表"><a href="#4-操作列表" class="headerlink" title="4. 操作列表"></a>4. 操作列表</h3><hr><h4 id="4-1-遍历列表"><a href="#4-1-遍历列表" class="headerlink" title="4.1 遍历列表"></a>4.1 遍历列表</h4><blockquote><p> for循环遍历: for cat in cats: (使用列表单数作为循环变量)<br> 注意缩进<br> 注意冒号</p></blockquote><h4 id="4-2-缩进"><a href="#4-2-缩进" class="headerlink" title="4.2 缩进"></a>4.2 缩进</h4><blockquote><p>python中每一级缩进表示一个等级, 缩进后表示属于上一级</p></blockquote><h4 id="4-3-创建数值列表"><a href="#4-3-创建数值列表" class="headerlink" title="4.3 创建数值列表"></a>4.3 创建数值列表</h4><ol><li>range()创建数字集<ul><li>range(value1, value2, distance): 从value1到value2 - 1, 变化值为distance</li></ul></li></ol><p><strong>补充:</strong></p><blockquote><p>可以通过range(num)直接循环num次.</p></blockquote><ol start="2"><li><p>转换为数字列表</p><ul><li>list(range(value1, value2, distance)): 即可转换为数字列表</li></ul></li><li><p>利用for循环和range创建任何数字列表, 如下:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">squares = []</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>):</span><br><span class="line">    squares.append(value ** <span class="number">2</span>)</span><br></pre></td></tr></table></figure></li></ol><blockquote><p><strong>可以使用更简便的方法:</strong> 即直接在列表创建时通过循环赋值.</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">squares = [value**<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>)]</span><br></pre></td></tr></table></figure><ol start="4"><li>数字列表的统计计算<ul><li>min(list): 最小值</li><li>max(list): 最大值</li><li>sum(list): 求列表中值的和</li></ul></li></ol><h4 id="4-4-使用列表片段"><a href="#4-4-使用列表片段" class="headerlink" title="4.4 使用列表片段"></a>4.4 使用列表片段</h4><ol><li><p>切片</p><ul><li>list[value1, value2]: 从第value1+1到value2</li><li>list[ :value2]: 从开头到第value2</li><li>list[value1:]: 从第value+1到结尾</li><li>list[-value:]: 从倒数第value到开头</li><li>list[:]: 所有元素<blockquote><p>切片是构建另一个副本.</p></blockquote></li></ul></li><li><p>遍历切片: 通过for循环</p></li><li><p>复制列表: 通过new_list = list[:]即可复制列表</p><blockquote><p>注意, 不能直接赋值, 如new_list = list, 这样行不通, 只是将两个变量指向同一个列表, 修改后两者都会变化.</p></blockquote></li></ol><h4 id="4-5-元组"><a href="#4-5-元组" class="headerlink" title="4.5 元组"></a>4.5 元组</h4><ol><li>元组的定义: 同列表, 使用()</li><li>遍历元组: 同列表</li><li>修改元组: 不可修改元组中的元素, 但可以修改元组变量的指向, 如<br>dimensions = (200, 50)<br>dimensions = (400, 50)<h4 id="4-6-设置代码格式"><a href="#4-6-设置代码格式" class="headerlink" title="4.6 设置代码格式"></a>4.6 设置代码格式</h4></li><li>PEP8: python改进提案,其中规范了python的书写格式</li><li>缩进: 最好使用四个空格而不是tab</li><li>行长: 一行不要超过80个字符</li><li>空行:使用一个空行分割两个模块, 便于阅读</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>4.操作列表</title>
+      <link href="/2020/%E7%BC%96%E7%A8%8B/Python/4-%E6%93%8D%E4%BD%9C%E5%88%97%E8%A1%A8/"/>
+      <url>/2020/%E7%BC%96%E7%A8%8B/Python/4-%E6%93%8D%E4%BD%9C%E5%88%97%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<h3 id="4-操作列表"><a href="#4-操作列表" class="headerlink" title="4. 操作列表"></a>4. 操作列表</h3><hr><h4 id="4-1-遍历列表"><a href="#4-1-遍历列表" class="headerlink" title="4.1 遍历列表"></a>4.1 遍历列表</h4><blockquote><p> for循环遍历: for cat in cats: (使用列表单数作为循环变量)<br> 注意缩进<br> 注意冒号</p></blockquote><h4 id="4-2-缩进"><a href="#4-2-缩进" class="headerlink" title="4.2 缩进"></a>4.2 缩进</h4><blockquote><p>python中每一级缩进表示一个等级, 缩进后表示属于上一级</p></blockquote><h4 id="4-3-创建数值列表"><a href="#4-3-创建数值列表" class="headerlink" title="4.3 创建数值列表"></a>4.3 创建数值列表</h4><ol><li>range()创建数字集<ul><li>range(value1, value2, distance): 从value1到value2 - 1, 变化值为distance</li></ul></li></ol><p><strong>补充:</strong></p><blockquote><p>可以通过range(num)直接循环num次.</p></blockquote><ol start="2"><li><p>转换为数字列表</p><ul><li>list(range(value1, value2, distance)): 即可转换为数字列表</li></ul></li><li><p>利用for循环和range创建任何数字列表, 如下:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">squares = []</span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>):</span><br><span class="line">    squares.append(value ** <span class="number">2</span>)</span><br></pre></td></tr></table></figure></li></ol><blockquote><p><strong>可以使用更简便的方法:</strong> 即直接在列表创建时通过循环赋值.</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">squares = [value**<span class="number">2</span> <span class="keyword">for</span> value <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>)]</span><br></pre></td></tr></table></figure><ol start="4"><li>数字列表的统计计算<ul><li>min(list): 最小值</li><li>max(list): 最大值</li><li>sum(list): 求列表中值的和</li></ul></li></ol><h4 id="4-4-使用列表片段"><a href="#4-4-使用列表片段" class="headerlink" title="4.4 使用列表片段"></a>4.4 使用列表片段</h4><ol><li><p>切片</p><ul><li>list[value1, value2]: 从第value1+1到value2</li><li>list[ :value2]: 从开头到第value2</li><li>list[value1:]: 从第value+1到结尾</li><li>list[-value:]: 从倒数第value到开头</li><li>list[:]: 所有元素<blockquote><p>切片是构建另一个副本.</p></blockquote></li></ul></li><li><p>遍历切片: 通过for循环</p></li><li><p>复制列表: 通过new_list = list[:]即可复制列表</p><blockquote><p>注意, 不能直接赋值, 如new_list = list, 这样行不通, 只是将两个变量指向同一个列表, 修改后两者都会变化.</p></blockquote></li></ol><h4 id="4-5-元组"><a href="#4-5-元组" class="headerlink" title="4.5 元组"></a>4.5 元组</h4><ol><li>元组的定义: 同列表, 使用()</li><li>遍历元组: 同列表</li><li>修改元组: 不可修改元组中的元素, 但可以修改元组变量的指向, 如<br>dimensions = (200, 50)<br>dimensions = (400, 50)<h4 id="4-6-设置代码格式"><a href="#4-6-设置代码格式" class="headerlink" title="4.6 设置代码格式"></a>4.6 设置代码格式</h4></li><li>PEP8: python改进提案,其中规范了python的书写格式</li><li>缩进: 最好使用四个空格而不是tab</li><li>行长: 一行不要超过80个字符</li><li>空行:使用一个空行分割两个模块, 便于阅读</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>3.列表简介</title>
+      <link href="/2020/%E7%BC%96%E7%A8%8B/Python/3-%E5%88%97%E8%A1%A8%E7%AE%80%E4%BB%8B/"/>
+      <url>/2020/%E7%BC%96%E7%A8%8B/Python/3-%E5%88%97%E8%A1%A8%E7%AE%80%E4%BB%8B/</url>
+      
+        <content type="html"><![CDATA[<h3 id="3-列表简介"><a href="#3-列表简介" class="headerlink" title="3. 列表简介"></a>3. 列表简介</h3><hr><h4 id="3-1-什么是列表"><a href="#3-1-什么是列表" class="headerlink" title="3.1 什么是列表"></a>3.1 什么是列表</h4><blockquote><ul><li>列表是由一系列特定顺序排列的元素组成.其中可以包含字母, 数字, 姓名等.</li><li>通常列表命名通常使用小写字母,下划线_分隔, 并且使用复数,如letters, digits, names等.</li><li>使用[ ]标识列表, 其中元素用 , 分隔.</li></ul></blockquote><ol><li><p>访问列表元素</p><ul><li>直接通过下标访问即可, 同数组.例如bicycles[0],从0开始.</li></ul></li><li><p>索引从0开始</p><ul><li>第一个元素下标为0</li><li>最后一个元素下标为-1, 因此可以很方便地访问最后一个元素.<blockquote><p>注意列表索引越界.</p></blockquote></li></ul></li></ol><h4 id="3-2-增-删-改"><a href="#3-2-增-删-改" class="headerlink" title="3.2 增/删/改"></a>3.2 增/删/改</h4><ol><li><p>增</p><ul><li>在尾部增加: list.append( ) <blockquote><p>因此可以通过创建一个新的列表, 然而通过append()方法依次添加元素.</p></blockquote></li><li>在中间增加: list.insert(pos, string), 如list.insert.(0, ‘ducati’),插入到0位置, 其他元素后移.</li></ul></li><li><p>删</p><ul><li>直接删除某个元素: del + name[i], 此处del为一个外部函数,并非list类的方法.</li><li>删除元素并使用它: <ul><li>list.pop(): 末位. bicycle = bicycles.pop()</li><li>list.pop(pos): 任意位置. bicycle = bicycles.pop(pos)<blockquote><p>以上两者的区别是在于删除后是否使用它.</p></blockquote></li></ul></li><li>根据值删除元素: list.remove(‘string’) 直接删除列表中string字符串元素. 适用于不知道元素位置的情况.若需要保留删除的值, 可以在删除前将其赋值给一个变量保存, 然后将其删除. 如: <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">too_expensive = <span class="string">'ducati'</span></span><br><span class="line">motorcycles.remove(too_expensive)</span><br></pre></td></tr></table></figure></li></ul></li><li><p>改</p><ul><li>类似于数组赋值, 直接给某个元素赋值即可. 如bicycles[0] = ‘ducati’.</li></ul></li></ol><h4 id="3-3-组织列表"><a href="#3-3-组织列表" class="headerlink" title="3.3 组织列表"></a>3.3 组织列表</h4><ol><li><p>永久性排序</p><ul><li>正向排序: list.sort(),即可从小到大排序</li><li>反向排序: list.sort(reverse = True), 即可从大到小排序</li></ul></li><li><p>临时排序</p><ul><li>正向排序: sorted(list), 从小到大</li><li>反向排序: sorted(list, reverse = Trur), 从大到小<blockquote><p>此函数是一个外部函数, 相当于创建一个临时列表.</p></blockquote></li></ul></li><li><p>逆序打印: list.reverse()即可逆转列表, 再次使用恢复原列表</p></li><li><p>列表长度: len(list)即可得到列表长度</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>1.Pycharm安装和使用</title>
+      <link href="/2020/%E7%BC%96%E7%A8%8B/Python/1-Pycharm%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
+      <url>/2020/%E7%BC%96%E7%A8%8B/Python/1-Pycharm%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-IDE-Pychram安装和使用"><a href="#1-IDE-Pychram安装和使用" class="headerlink" title="1. IDE:Pychram安装和使用"></a>1. IDE:Pychram安装和使用</h2><h3 id="一-主题设置插件"><a href="#一-主题设置插件" class="headerlink" title="一.主题设置插件"></a>一.主题设置插件</h3><ol><li>主题网站 -&gt;<a href="http://www.themesmap.com/details.html?id=566065a4ddacef1b003edb63" target="_blank" rel="noopener">Link</a></li></ol><h3 id="补充-常用命令"><a href="#补充-常用命令" class="headerlink" title="补充:常用命令"></a>补充:常用命令</h3><ol><li><p>命令行编辑器清空</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.system(<span class="string">'cls'</span>)</span><br></pre></td></tr></table></figure></li><li><p>pycharm如何安装库<br>setting - project - project interpret - ‘+’</p></li><li><p>pycharm设置虚拟环境<br><img src="en-resource://database/1626:1" alt="971d7b9b001ee8d29dfed0600b725613.png"><br><img src="en-resource://database/1628:1" alt="c2cff3e6d4398ed0dd60313c426bd259.png"></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux的安装</title>
       <link href="/2020/%E5%B7%A5%E5%85%B7/Linux%E7%9A%84%E5%AE%89%E8%A3%85/"/>
       <url>/2020/%E5%B7%A5%E5%85%B7/Linux%E7%9A%84%E5%AE%89%E8%A3%85/</url>

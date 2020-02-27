@@ -6,50 +6,17 @@
   <meta name="keywords" content>
   <meta name="description" content="Vim使用技巧(一) | Blog of Mr.Yang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Linux的安装 一、安装VMware Workstation Pro 12A. 下载软件  下载链接 提取码: iua8 激活码：5A02H-AU243-TZJ49-GTC7K-3C61N  B. 安装软件  同意协议 选择路径 不选择反馈 选择快捷方式 输入许可证 检查是否安装两个网卡  二、安装LinuxA. 下载Centos 6.5  打开官网 选择获得centos 下载老版本 选择i38">
+<meta name="description" content="11. 测试代码 11.1 测试函数 对于所编写的函数, 我们需要测试其健壮性, 即对各种情况都能够处理, 不至于在某种情况下使得程序崩溃. python中通过特定的结构来测试函数的健壮性.   一. 单元测试和测试用例使用模块unittest进行代码测试. 单元测试用于核实函数某个方面没有问题; 测试用例是一组单元测试, 这些单元测试一起测试函数在各种情况下行为都符合要求. 二. 可通过的测试1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux的安装">
-<meta property="og:url" content="http://Yang-creat.github.io/2020/工具/Linux的安装/index.html">
+<meta property="og:title" content="11.测试代码">
+<meta property="og:url" content="http://Yang-creat.github.io/2020/编程/Python/11-测试代码/index.html">
 <meta property="og:site_name" content="Blog of Mr.Yang">
-<meta property="og:description" content="Linux的安装 一、安装VMware Workstation Pro 12A. 下载软件  下载链接 提取码: iua8 激活码：5A02H-AU243-TZJ49-GTC7K-3C61N  B. 安装软件  同意协议 选择路径 不选择反馈 选择快捷方式 输入许可证 检查是否安装两个网卡  二、安装LinuxA. 下载Centos 6.5  打开官网 选择获得centos 下载老版本 选择i38">
+<meta property="og:description" content="11. 测试代码 11.1 测试函数 对于所编写的函数, 我们需要测试其健壮性, 即对各种情况都能够处理, 不至于在某种情况下使得程序崩溃. python中通过特定的结构来测试函数的健壮性.   一. 单元测试和测试用例使用模块unittest进行代码测试. 单元测试用于核实函数某个方面没有问题; 测试用例是一组单元测试, 这些单元测试一起测试函数在各种情况下行为都符合要求. 二. 可通过的测试1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://coding-net-production-file-ci.codehub.cn/a4e85c80-3d9e-11ea-9990-9b97fa982947.png?sign=iJsPLrLjvjv3nsucNNlxKklJei5hPTEyNTcyNDI1OTkmaz1BS0lEYXk4M2xGbWFTNlk0TFRkek1WTzFTZFpPeUpTTk9ZcHImZT0xNTgzMDAwODgyJnQ9MTU4Mjc4NDg4MiZyPTkwNzYyMTMwJmY9L2E0ZTg1YzgwLTNkOWUtMTFlYS05OTkwLTliOTdmYTk4Mjk0Ny5wbmcmYj1jb2RpbmctbmV0LXByb2R1Y3Rpb24tZmlsZQ==">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/a4ef8870-3d9e-11ea-9990-9b97fa982947.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1582789053%3B1582792653%26q-key-time%3D1582789053%3B1582792653%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D490125b3b69350a81743bf8e43d2acbba42b3443&response-content-disposition=attachment%3Bfilename%3D2.%E6%9B%B4%E6%94%B9%E4%BD%8D%E7%BD%AE.png&response-expires=Sat%2C%2029%20Feb%202020%2019%3A37%3A33%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/a4f6db70-3d9e-11ea-9990-9b97fa982947.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1582789053%3B1582792653%26q-key-time%3D1582789053%3B1582792653%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Df430cb87fba9dca81ee86a9a7c8ac98a96bca0a5&response-content-disposition=attachment%3Bfilename%3D3.%E5%8B%BE%E6%8E%89.png&response-expires=Sat%2C%2029%20Feb%202020%2019%3A37%3A33%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/a57ef730-3d9e-11ea-9990-9b97fa982947.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1582789053%3B1582792653%26q-key-time%3D1582789053%3B1582792653%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Dffdea7df5318879b51e7e41cb6c157708297c4f9&response-content-disposition=attachment%3Bfilename%3D4.%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%90%AF%E5%8A%A8.png&response-expires=Sat%2C%2029%20Feb%202020%2019%3A37%3A33%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/a4eb1ba0-3d9e-11ea-9990-9b97fa982947.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1582789053%3B1582792653%26q-key-time%3D1582789053%3B1582792653%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Dff79c1e8e1f4ae155adc3ceee0d16d867eda4f84&response-content-disposition=attachment%3Bfilename%3D5.%E8%AE%B8%E5%8F%AF%E8%AF%81%E8%BE%93%E5%85%A5.png&response-expires=Sat%2C%2029%20Feb%202020%2019%3A37%3A33%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/a4e4da10-3d9e-11ea-9990-9b97fa982947.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1582789053%3B1582792653%26q-key-time%3D1582789053%3B1582792653%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Da59235198186bdd8a763aa1ce5072aa32e2b0a85&response-content-disposition=attachment%3Bfilename%3D6.%E6%A3%80%E6%9F%A5%E4%B8%A4%E4%B8%AA%E7%BD%91%E5%8D%A1.png&response-expires=Sat%2C%2029%20Feb%202020%2019%3A37%3A33%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/64429140-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756541%3B1579760141%26q-key-time%3D1579756541%3B1579760141%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Debdecaff4fb9c1c42f9a7a1e332b05f003df2f9b&response-content-disposition=attachment%3Bfilename%3D1.%E6%89%93%E5%BC%80%E5%AE%98%E7%BD%91.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A15%3A41%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/6445c590-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756541%3B1579760141%26q-key-time%3D1579756541%3B1579760141%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D0fcd25b18aaf65d0b64b56ada57ce4a3f8788712&response-content-disposition=attachment%3Bfilename%3D2.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A15%3A41%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/643ee7c0-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756541%3B1579760141%26q-key-time%3D1579756541%3B1579760141%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D766468800142379d54772be01866cfc564b5e8cf&response-content-disposition=attachment%3Bfilename%3D3.%E8%80%81%E7%89%88%E6%9C%AC.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A15%3A41%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/653f19b0-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756541%3B1579760141%26q-key-time%3D1579756541%3B1579760141%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D0f416757aebaf36883bae90bbfd63cdd5766db40&response-content-disposition=attachment%3Bfilename%3D4.%E4%B8%A4%E4%B8%AA%E7%89%88%E6%9C%AC.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A15%3A41%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/643dfd60-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756541%3B1579760141%26q-key-time%3D1579756541%3B1579760141%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D459d2fc4ddadcda02966f0dc76547bc1c2255888&response-content-disposition=attachment%3Bfilename%3D4.%E6%89%BE%E5%88%B06.5%E7%89%88%E6%9C%AC.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A15%3A41%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/64383100-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756541%3B1579760141%26q-key-time%3D1579756541%3B1579760141%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D3241f969ad2d5abcd866cc4bf51ab41148c5710c&response-content-disposition=attachment%3Bfilename%3D5.%E4%B8%8B%E8%BD%BD1.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A15%3A41%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/c06a0750-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756694%3B1579760294%26q-key-time%3D1579756694%3B1579760294%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D76604380e5b5495ba195366264620bc1ba0a4eb3&response-content-disposition=attachment%3Bfilename%3D1.%E8%87%AA%E5%AE%9A%E4%B9%89.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A14%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/c06e4d10-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756694%3B1579760294%26q-key-time%3D1579756694%3B1579760294%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D063b54a74310c24c8ef0121c5767184a07d90a84&response-content-disposition=attachment%3Bfilename%3D2.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A14%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/be8a71e0-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756691%3B1579760291%26q-key-time%3D1579756691%3B1579760291%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D2c2a8eb5e228f50bd414dd9aff6fbcd9a52e1a89&response-content-disposition=attachment%3Bfilename%3D3.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A11%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/be948400-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756691%3B1579760291%26q-key-time%3D1579756691%3B1579760291%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D5528b8aac271ea819d1463cdb51851350ff05035&response-content-disposition=attachment%3Bfilename%3D4.%E9%80%89%E6%8B%A932%E4%BD%8D.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A11%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/be901730-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756691%3B1579760291%26q-key-time%3D1579756691%3B1579760291%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Dac1b037e4cf98315b028f8b0a8c7c93b38832e36&response-content-disposition=attachment%3Bfilename%3D5.%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%90%8D%E7%A7%B0%E5%92%8C%E4%BD%8D%E7%BD%AE.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A11%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/be96cdf0-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756691%3B1579760291%26q-key-time%3D1579756691%3B1579760291%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Db99241387abad7cdbc308b35554673c983fd75ac&response-content-disposition=attachment%3Bfilename%3D6.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A11%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/be982d80-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756691%3B1579760291%26q-key-time%3D1579756691%3B1579760291%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Dafac1d2543eb7f42a79a3019830aeddc86ac36a8&response-content-disposition=attachment%3Bfilename%3D7.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A11%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bf0fce80-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756692%3B1579760292%26q-key-time%3D1579756692%3B1579760292%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Df5f646e624465e465f11971054d1e843c8e20a7a&response-content-disposition=attachment%3Bfilename%3D8.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A12%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bf139f10-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756692%3B1579760292%26q-key-time%3D1579756692%3B1579760292%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D9a0adbaee67adb6b9485dc86cd24cbc77735258f&response-content-disposition=attachment%3Bfilename%3D9.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A12%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bf1c51a0-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756692%3B1579760292%26q-key-time%3D1579756692%3B1579760292%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Deb318e602064cd9e1c03ac6373f0aba9dacc887d&response-content-disposition=attachment%3Bfilename%3D11.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A12%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bf1b8e50-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756692%3B1579760292%26q-key-time%3D1579756692%3B1579760292%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Dd4a3f20202a50ed2bf64671b65f5788ccb3f2e5a&response-content-disposition=attachment%3Bfilename%3D12.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A12%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bf69d560-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756693%3B1579760293%26q-key-time%3D1579756693%3B1579760293%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D1601ac3203602bdb47c54269019dbfb0e86f9bea&response-content-disposition=attachment%3Bfilename%3D13.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A13%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bf6cbb90-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756693%3B1579760293%26q-key-time%3D1579756693%3B1579760293%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3De0d00e645a003e3422b23952503fef8aef33bcf1&response-content-disposition=attachment%3Bfilename%3D14.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A13%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bf763170-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756693%3B1579760293%26q-key-time%3D1579756693%3B1579760293%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Db7ce8cf1c4f68e736d338e391f501c74ef135e1b&response-content-disposition=attachment%3Bfilename%3D15.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A13%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bf7016f0-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756693%3B1579760293%26q-key-time%3D1579756693%3B1579760293%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D707d2b166e928f3f6ffbf31e8ae68448d904c465&response-content-disposition=attachment%3Bfilename%3D16.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A13%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bfcbf290-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756693%3B1579760293%26q-key-time%3D1579756693%3B1579760293%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Da4ac39c9b830f86e84a31e8f79f26913750a6dfa&response-content-disposition=attachment%3Bfilename%3D18.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A13%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bfcc67c0-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756694%3B1579760294%26q-key-time%3D1579756694%3B1579760294%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D643ccbe1a029342aa1d142573eab9c9ebc35e27e&response-content-disposition=attachment%3Bfilename%3D19.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A14%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bfd1bef0-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756694%3B1579760294%26q-key-time%3D1579756694%3B1579760294%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D662a1df8398aa33dd0626323a16694e43b03c17a&response-content-disposition=attachment%3Bfilename%3D20.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A14%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/bfd197e0-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756694%3B1579760294%26q-key-time%3D1579756694%3B1579760294%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3D40f1b911d1350bb706a7834b19027057e3a2a742&response-content-disposition=attachment%3Bfilename%3D21.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A14%20GMT">
-<meta property="og:image" content="http://coding-net-production-file-1257242599.cos.ap-shanghai.myqcloud.com/c066fa10-3d9f-11ea-81d6-6d51184320d4.png?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDay83lFmaS6Y4LTdzMVO1SdZOyJSNOYpr%26q-sign-time%3D1579756694%3B1579760294%26q-key-time%3D1579756694%3B1579760294%26q-header-list%3D%26q-url-param-list%3Dresponse-content-disposition%3Bresponse-expires%26q-signature%3Dc5e38f771faaa58c6cc7660949f693366bfbaad9&response-content-disposition=attachment%3Bfilename%3D23.png&response-expires=Sat%2C%2025%20Jan%202020%2017%3A18%3A14%20GMT">
-<meta property="og:updated_time" content="2020-02-27T07:40:06.735Z">
+<meta property="og:updated_time" content="2020-02-27T07:57:01.732Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux的安装">
-<meta name="twitter:description" content="Linux的安装 一、安装VMware Workstation Pro 12A. 下载软件  下载链接 提取码: iua8 激活码：5A02H-AU243-TZJ49-GTC7K-3C61N  B. 安装软件  同意协议 选择路径 不选择反馈 选择快捷方式 输入许可证 检查是否安装两个网卡  二、安装LinuxA. 下载Centos 6.5  打开官网 选择获得centos 下载老版本 选择i38">
-<meta name="twitter:image" content="https://coding-net-production-file-ci.codehub.cn/a4e85c80-3d9e-11ea-9990-9b97fa982947.png?sign=iJsPLrLjvjv3nsucNNlxKklJei5hPTEyNTcyNDI1OTkmaz1BS0lEYXk4M2xGbWFTNlk0TFRkek1WTzFTZFpPeUpTTk9ZcHImZT0xNTgzMDAwODgyJnQ9MTU4Mjc4NDg4MiZyPTkwNzYyMTMwJmY9L2E0ZTg1YzgwLTNkOWUtMTFlYS05OTkwLTliOTdmYTk4Mjk0Ny5wbmcmYj1jb2RpbmctbmV0LXByb2R1Y3Rpb24tZmlsZQ==">
+<meta name="twitter:title" content="11.测试代码">
+<meta name="twitter:description" content="11. 测试代码 11.1 测试函数 对于所编写的函数, 我们需要测试其健壮性, 即对各种情况都能够处理, 不至于在某种情况下使得程序崩溃. python中通过特定的结构来测试函数的健壮性.   一. 单元测试和测试用例使用模块unittest进行代码测试. 单元测试用于核实函数某个方面没有问题; 测试用例是一组单元测试, 这些单元测试一起测试函数在各种情况下行为都符合要求. 二. 可通过的测试1">
 
 
 <link rel="icon" href="/img/mystar.jpg">
@@ -132,25 +99,33 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(13)</small></div></li>
+    <li><div class="all active">全部文章<small>(23)</small></div></li>
     
         
             
-            <li><div data-rel="编程"><i class="fold iconfont icon-right"></i>编程<small>(4)</small></div>
+            <li><div data-rel="编程"><i class="fold iconfont icon-right"></i>编程<small>(14)</small></div>
                 
                     <ul class="sub hide">
                         
-                        <li><div data-rel="CPP">CPP<small>(3)</small></div>
+                        <li><div data-rel="Python">Python<small>(11)</small></div>
                             
                         </li>
                             
-                        <li><div data-rel="Python">Python<small>(1)</small></div>
+                        <li><div data-rel="CPP">CPP<small>(3)</small></div>
                             
                         </li>
                             
                     </ul>
                 
             </li>
+            
+        
+    
+        
+            
+        
+    
+        
             
         
     
@@ -172,21 +147,9 @@
     
         
             
-        
-    
-        
-            
-        
-    
-        
-            
             <li><div data-rel="LOL">LOL<small>(1)</small></div>
                 
             </li>
-            
-        
-    
-        
             
         
     
@@ -206,6 +169,10 @@
             
         
     
+        
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -216,7 +183,7 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="13">
+<input type="hidden" id="yelog_site_posts_number" value="23">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -261,11 +228,107 @@
     <nav id="title-list-nav">
         
         <a  class="编程 Python "
+           href="/2020/编程/Python/1-Pycharm安装和使用/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="1.Pycharm安装和使用">1.Pycharm安装和使用</span>
+            <span class="post-date" title="2020-02-27 15:49:04">2020/02/27</span>
+        </a>
+        
+        <a  class="编程 Python "
+           href="/2020/编程/Python/10-文件与异常/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="10.文件与异常">10.文件与异常</span>
+            <span class="post-date" title="2020-02-27 15:56:09">2020/02/27</span>
+        </a>
+        
+        <a  class="编程 Python "
+           href="/2020/编程/Python/11-测试代码/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="11.测试代码">11.测试代码</span>
+            <span class="post-date" title="2020-02-27 15:56:26">2020/02/27</span>
+        </a>
+        
+        <a  class="编程 Python "
            href="/2019/编程/Python/2-变量和简单数据类型/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="2.变量和简单数据类型">2.变量和简单数据类型</span>
             <span class="post-date" title="2019-11-11 23:03:57">2019/11/11</span>
+        </a>
+        
+        <a  class="编程 Python "
+           href="/2020/编程/Python/3-列表简介/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="3.列表简介">3.列表简介</span>
+            <span class="post-date" title="2020-02-27 15:50:20">2020/02/27</span>
+        </a>
+        
+        <a  class="编程 Python "
+           href="/2020/编程/Python/5-If语句/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="5.If语句">5.If语句</span>
+            <span class="post-date" title="2020-02-27 15:51:48">2020/02/27</span>
+        </a>
+        
+        <a  class="编程 Python "
+           href="/2020/编程/Python/4-操作列表/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="4.操作列表">4.操作列表</span>
+            <span class="post-date" title="2020-02-27 15:51:18">2020/02/27</span>
+        </a>
+        
+        <a  class="编程 Python "
+           href="/2020/编程/Python/6-字典/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="6.字典">6.字典</span>
+            <span class="post-date" title="2020-02-27 15:52:22">2020/02/27</span>
+        </a>
+        
+        <a  class="编程 Python "
+           href="/2020/编程/Python/7-用户输入和while循环/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="7.用户输入和while循环">7.用户输入和while循环</span>
+            <span class="post-date" title="2020-02-27 15:52:58">2020/02/27</span>
+        </a>
+        
+        <a  class="编程 Python "
+           href="/2020/编程/Python/8-函数/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="8.函数">8.函数</span>
+            <span class="post-date" title="2020-02-27 15:53:28">2020/02/27</span>
+        </a>
+        
+        <a  class="编程 Python "
+           href="/2020/编程/Python/9-类/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="9.类">9.类</span>
+            <span class="post-date" title="2020-02-27 15:53:58">2020/02/27</span>
+        </a>
+        
+        <a  class="编程 CPP "
+           href="/2019/编程/CPP/CPP-函数的使用/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="函数的使用">函数的使用</span>
+            <span class="post-date" title="2019-08-20 15:20:28">2019/08/20</span>
+        </a>
+        
+        <a  class="编程 CPP "
+           href="/2019/编程/CPP/CPP-类和对象以及非成员函数的理解/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="类和对象以及非成员函数的理解">类和对象以及非成员函数的理解</span>
+            <span class="post-date" title="2019-08-20 11:59:53">2019/08/20</span>
         </a>
         
         <a  class="编程 CPP "
@@ -284,20 +347,12 @@
             <span class="post-date" title="2019-08-08 19:57:01">2019/08/08</span>
         </a>
         
-        <a  class="编程 CPP "
-           href="/2019/编程/CPP/CPP-函数的使用/"
+        <a  class="LOL "
+           href="/2019/LOL/LOL锐雯操作/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="函数的使用">函数的使用</span>
-            <span class="post-date" title="2019-08-20 15:20:28">2019/08/20</span>
-        </a>
-        
-        <a  class="工具 "
-           href="/2020/工具/Linux的安装/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Linux的安装">Linux的安装</span>
-            <span class="post-date" title="2020-01-22 21:43:03">2020/01/22</span>
+            <span class="post-title" title="LOL锐雯操作">LOL锐雯操作</span>
+            <span class="post-date" title="2019-08-14 09:26:38">2019/08/14</span>
         </a>
         
         <a  class="工具 Hexo "
@@ -308,20 +363,12 @@
             <span class="post-date" title="2019-08-09 17:02:51">2019/08/09</span>
         </a>
         
-        <a  class="编程 CPP "
-           href="/2019/编程/CPP/CPP-类和对象以及非成员函数的理解/"
+        <a  class="工具 "
+           href="/2020/工具/Linux的安装/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="类和对象以及非成员函数的理解">类和对象以及非成员函数的理解</span>
-            <span class="post-date" title="2019-08-20 11:59:53">2019/08/20</span>
-        </a>
-        
-        <a  class="LOL "
-           href="/2019/LOL/LOL锐雯操作/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="LOL锐雯操作">LOL锐雯操作</span>
-            <span class="post-date" title="2019-08-14 09:26:38">2019/08/14</span>
+            <span class="post-title" title="Linux的安装">Linux的安装</span>
+            <span class="post-date" title="2020-01-22 21:43:03">2020/01/22</span>
         </a>
         
         <a  class="思维模型 "
@@ -341,19 +388,19 @@
         </a>
         
         <a  class="认识电脑 "
-           href="/2019/认识电脑/关于win10系统输入法问题/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="win10问题解决">win10问题解决</span>
-            <span class="post-date" title="2019-08-15 10:03:32">2019/08/15</span>
-        </a>
-        
-        <a  class="认识电脑 "
            href="/2019/认识电脑/更改键盘键位/"
            data-tag=""
            data-author="" >
             <span class="post-title" title="更改键盘键位">更改键盘键位</span>
             <span class="post-date" title="2019-08-15 11:28:02">2019/08/15</span>
+        </a>
+        
+        <a  class="认识电脑 "
+           href="/2019/认识电脑/关于win10系统输入法问题/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="win10问题解决">win10问题解决</span>
+            <span class="post-date" title="2019-08-15 10:03:32">2019/08/15</span>
         </a>
         
         <a  class="认识电脑 "
