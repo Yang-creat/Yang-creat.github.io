@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>10.文件与异常 | Blog of Mr.Yang</title>
+  <title>尝试一下 | Blog of Mr.Yang</title>
   <meta name="keywords" content>
-  <meta name="description" content="10.文件与异常 | Blog of Mr.Yang">
+  <meta name="description" content="尝试一下 | Blog of Mr.Yang">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="这是一个testpost">
 <meta property="og:type" content="article">
@@ -431,27 +431,19 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-10-文件与异常" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-尝试一下" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">10.文件与异常</h1>
+        <h1 class="article-title">尝试一下</h1>
     
     <div class="article-meta">
         
         
-        
-        <span class="book">
-            
-                <a href="javascript:" data-rel="编程">编程</a>/
-            
-                <a href="javascript:" data-rel="Python">Python</a>
-            
-        </span>
         
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-27 15:56:42'>2020-02-27 15:56</time>
+        创建时间:<time class="date" title='更新时间: 2020-05-26 18:23:54'>2020-05-26 18:23</time>
         
     </div>
     <div class="article-meta">
@@ -462,7 +454,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-文件和异常"><span class="toc-text">10. 文件和异常</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#10-1-从文件中读取数据"><span class="toc-text">10.1 从文件中读取数据</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一-读取整个文件"><span class="toc-text">一. 读取整个文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二-关于文件路径"><span class="toc-text">二. 关于文件路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三-逐行读取"><span class="toc-text">三. 逐行读取</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四-创建一个包含文件各行内容的列表"><span class="toc-text">四. 创建一个包含文件各行内容的列表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#五-使用文件中的内容"><span class="toc-text">五. 使用文件中的内容</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-2-写入文件"><span class="toc-text">10.2 写入文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一-写入空文件"><span class="toc-text">一. 写入空文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二-附加内容到文件"><span class="toc-text">二. 附加内容到文件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-3-异常"><span class="toc-text">10.3 异常</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一-使用try-except代码块"><span class="toc-text">一. 使用try-except代码块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二-常见的异常"><span class="toc-text">二. 常见的异常</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-4-存储数据"><span class="toc-text">10.4 存储数据</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一-json-dump-和json-load"><span class="toc-text">一. json.dump()和json.load()</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#这是一个testpost"><span class="toc-text">这是一个testpost</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -477,67 +469,7 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="10-文件和异常"><a href="#10-文件和异常" class="headerlink" title="10. 文件和异常"></a>10. 文件和异常</h3><hr>
-<h4 id="10-1-从文件中读取数据"><a href="#10-1-从文件中读取数据" class="headerlink" title="10.1 从文件中读取数据"></a>10.1 从文件中读取数据</h4><h5 id="一-读取整个文件"><a href="#一-读取整个文件" class="headerlink" title="一. 读取整个文件"></a>一. 读取整个文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'filename.txt'</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">    contents = file_object.read()</span><br><span class="line">    print(contents)</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>打开文件, 通过open()函数, 传入文件, 从当前目录中寻找</li>
-<li>with在不需要文件时自动将其关闭, 当然使用close()函数也能关闭文件, 但是若是出现bug导致close()未执行, 则可能导致文件数据丢失, 因此最好用with</li>
-<li>as 用于起别名, 将打开的文件赋给flie_object</li>
-<li>read()函数用于读取文件对象中的内容, 注意read()会多出一个空行</li>
-</ol>
-<h5 id="二-关于文件路径"><a href="#二-关于文件路径" class="headerlink" title="二. 关于文件路径"></a>二. 关于文件路径</h5><ol>
-<li>可以使用相对路径, 从当前目录找</li>
-<li>可以使用绝对路径, 注意windows中是用反斜杠\分隔目录</li>
-</ol>
-<h5 id="三-逐行读取"><a href="#三-逐行读取" class="headerlink" title="三. 逐行读取"></a>三. 逐行读取</h5><p>如何遍历文件中每一行的数据? 通过循环即可.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = <span class="string">'filename.txt'</span></span><br><span class="line"><span class="keyword">with</span> open(filename) <span class="keyword">as</span> file_object:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> file_object:</span><br><span class="line">        print(line)</span><br></pre></td></tr></table></figure>
-
-<p>注意: 由于每一行末尾有个看不见的换行符, 会打印出来, 同时print()函数会自动在末尾加一个换行, 因此会有两个空行, 可以使用rstrip()消除空行.</p>
-<h5 id="四-创建一个包含文件各行内容的列表"><a href="#四-创建一个包含文件各行内容的列表" class="headerlink" title="四. 创建一个包含文件各行内容的列表"></a>四. 创建一个包含文件各行内容的列表</h5><p>将文件中的数据每一行都存在一个列表中:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">filename = <span class="string">'filename.txt'</span></span><br><span class="line"><span class="keyword">with</span> open(filename) <span class="keyword">as</span> file_object:</span><br><span class="line">    lines = file_object.readlines()</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>通过readlines()函数可以读文件中的每一行, 并将其存在一个列表中. 每一行后面会加一个换行符</p>
-</blockquote>
-<blockquote>
-<p>补充: 可以通过int(), float(), str()进行数据类型转换</p>
-</blockquote>
-<h5 id="五-使用文件中的内容"><a href="#五-使用文件中的内容" class="headerlink" title="五. 使用文件中的内容"></a>五. 使用文件中的内容</h5><p>将存在列表中的每一行数据拿出来使用:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将列表中的字符串拼接为一个, 并打印出到小数点后50位</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">    pi_string += line.strip()</span><br><span class="line">print(pi_string[:<span class="number">52</span>]</span><br></pre></td></tr></table></figure>
-
-<h4 id="10-2-写入文件"><a href="#10-2-写入文件" class="headerlink" title="10.2 写入文件"></a>10.2 写入文件</h4><h5 id="一-写入空文件"><a href="#一-写入空文件" class="headerlink" title="一. 写入空文件"></a>一. 写入空文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">filename = <span class="string">'filename.txt'</span></span><br><span class="line"><span class="keyword">with</span> open(filename, <span class="string">'w'</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">    file_object.wirte(<span class="string">"I love programming"</span>)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>打开文件时, 有三种模式, r(读), w(写), a(追加), r+(读写), 默认为r, 注意通过w模式写入时, 会清空文件中的内容.</p>
-</blockquote>
-<h5 id="二-附加内容到文件"><a href="#二-附加内容到文件" class="headerlink" title="二. 附加内容到文件"></a>二. 附加内容到文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 改为a模式即可</span></span><br><span class="line">    filename = <span class="string">'filename.txt'</span></span><br><span class="line">    <span class="keyword">with</span> open(filename, <span class="string">'a'</span>) <span class="keyword">as</span> file_object:</span><br><span class="line">        file_object.wirte(<span class="string">"I love programming"</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="10-3-异常"><a href="#10-3-异常" class="headerlink" title="10.3 异常"></a>10.3 异常</h4><blockquote>
-<p>为什么要处理异常: 对于可能会报错的程序语句, 我们需要进行处理, 使其不妨碍程序的继续进行.</p>
-</blockquote>
-<h5 id="一-使用try-except代码块"><a href="#一-使用try-except代码块" class="headerlink" title="一. 使用try-except代码块"></a>一. 使用try-except代码块</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    answer = first_num / second_num</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    print(<span class="string">"you can't divide by zero!"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(answer)</span><br></pre></td></tr></table></figure>
-
-<p>执行流程如下: 对于可能报错的代码放在try中, 若发生错误,且是exctpt中的异常, 比如是ZeroDivisionError, 则执行except中内容, 否则执行else中内容. </p>
-<h5 id="二-常见的异常"><a href="#二-常见的异常" class="headerlink" title="二. 常见的异常"></a>二. 常见的异常</h5><ul>
-<li>0除数异常: ZeroDivisionError</li>
-<li>文件未找到异常: FileNotFoundError</li>
-<li>except中也可以什么都不做, 用pass即可.</li>
-</ul>
-<blockquote>
-<p>使用split()函数可以将字符串根据空格拆分为多个部分, 并存在一个列表中, 可用于单词计数.</p>
-</blockquote>
-<h4 id="10-4-存储数据"><a href="#10-4-存储数据" class="headerlink" title="10.4 存储数据"></a>10.4 存储数据</h4><blockquote>
-<p>模块json可以将简单的pytho数据结构存储到文件中, 如列表, 字典</p>
-</blockquote>
-<h5 id="一-json-dump-和json-load"><a href="#一-json-dump-和json-load" class="headerlink" title="一. json.dump()和json.load()"></a>一. json.dump()和json.load()</h5><ol>
-<li><p>json.dump()接受两个实参: 要存储的数据以及可用于存储数据的文件对象</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line">numbers = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>]</span><br><span class="line">filename = <span class="string">'numbers.json'</span></span><br><span class="line"><span class="keyword">with</span> open(filenname, <span class="string">'w'</span>) <span class="keyword">as</span> f_obj:</span><br><span class="line">    json.dump(numbers, f_obj)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>json.load(): 直接读入json中的数据</p>
-</li>
-</ol>
-
+        <h2 id="这是一个testpost"><a href="#这是一个testpost" class="headerlink" title="这是一个testpost"></a>这是一个testpost</h2>
       
        <hr><span style="font-style: italic;color: gray;"> 本文由Mr.Yang所有，转载请注明 </span>
     </div>
