@@ -5,11 +5,17 @@
     
     <entry>
       <title>尝试一下</title>
-      <link href="/2020/null/%E5%B0%9D%E8%AF%95%E4%B8%80%E4%B8%8B/"/>
-      <url>/2020/null/%E5%B0%9D%E8%AF%95%E4%B8%80%E4%B8%8B/</url>
+      <link href="/2020/Python/%E5%B0%9D%E8%AF%95%E4%B8%80%E4%B8%8B/"/>
+      <url>/2020/Python/%E5%B0%9D%E8%AF%95%E4%B8%80%E4%B8%8B/</url>
       
-        <content type="html"><![CDATA[<h2 id="这是一个testpost"><a href="#这是一个testpost" class="headerlink" title="这是一个testpost"></a>这是一个testpost</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="这是一个testpost"><a href="#这是一个testpost" class="headerlink" title="这是一个testpost"></a>这是一个testpost</h2><p>再次修改，是否成功</p>]]></content>
       
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
       
       
     </entry>
